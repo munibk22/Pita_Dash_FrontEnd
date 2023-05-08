@@ -1,0 +1,245 @@
+
+
+@keyframes rotate {
+ 100% {
+   background-position: 0% 50%;
+ }
+}
+
+.signup-body {
+ display: grid;
+ place-items: center;
+ margin: 0;
+ background-color: #000000;
+ background-image: url("/src/assests/pics/bbblurry.svg");
+ /* background-image: url("/src/assests/pics/logo1.png"); */
+ background-repeat: no-repeat;
+ background-size: 200vh;
+ font-family: "Euclid Circular A";
+ color: #3a334e;
+ animation: rotate 5s infinite alternate linear;
+}
+
+button {
+ background: transparent;
+ border: 0;
+ cursor: pointer;
+}
+
+.control {
+ border: 0;
+ border-radius: 8px;
+ outline: none;
+ width: 100%;
+ height: 56px;
+ padding: 0 16px;
+ background: transparent;
+ border-radius: 999px;
+ border: 1px solid rgba(255, 255, 255, 0.2);
+ /* color: #5a4f79; */
+ color: #720b7b;
+ margin: 8px 0;
+ font-family: inherit;
+ text-align: left;
+ font-size: 16px;
+ transition: 0.4s;
+}
+
+.login-card {
+ width: 500px !important;
+ padding: 100px 30px 64px;
+ border-radius: 1.25rem;
+ background: rgba(0, 0, 0, 0.5);
+ text-align: center;
+ backdrop-filter: blur(10px);
+}
+
+.login-card > h2 {
+ font-size: 36px;
+ font-weight: 600;
+ margin: 0 0 6px;
+ color: #f9f9f9;
+}
+
+.login-card img {
+ width: 120px;
+ border-radius: 50%;
+ border: 1px solid rgba(255, 255, 255, 0.4);
+ padding: 5px;
+}
+
+.login-card > h3 {
+ color: #837f90;
+ margin: 0 0 40px;
+ font-weight: 500;
+ font-size: 1rem;
+}
+
+.login-form {
+ width: 100%;
+ margin: 0;
+ display: grid;
+}
+
+.login-form input.control::placeholder {
+ color: #aaa7bc;
+}
+
+.login-form > button.control {
+ cursor: pointer;
+ width: 100%;
+ height: 56px;
+ padding: 0 16px;
+ background: #f9f9f9;
+ color: #000000;
+ border: 0;
+ font-family: inherit;
+ font-size: 1rem;
+ font-weight: 600;
+ text-align: center;
+ letter-spacing: 2px;
+ transition: all 0.375s;
+}
+
+.username {
+ position: relative;
+}
+
+@keyframes spin {
+ 100% {
+   rotate: 1turn;
+ }
+}
+
+.spinner {
+ position: absolute;
+ top: 50%;
+ right: 16px;
+ translate: 0 -50%;
+ width: 24px;
+ height: 24px;
+ border-radius: 50%;
+ border: 3px solid #ccc9e1;
+ border-top-color: #8f44fd;
+ opacity: 0;
+ animation: spin 1s infinite linear;
+}
+
+.spinner.visible {
+ opacity: 1;
+}
+
+.alert {
+ overflow: hidden;
+ text-align: left;
+ padding: 0 16px;
+ color: #ff3e72;
+ height: 0;
+ transition: 0.3s;
+}
+
+.alert.visible {
+ height: 32px;
+}
+
+dialog {
+  z-index: 10;
+  margin-top: 10px;
+  background: green;
+  border: none;
+  border-radius: 1rem;
+}
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+	/* Modal background */
+ .login-modal, .register-modal {
+  z-index: 10;
+  display: grid; 
+  grid-gap:1rem;
+  place-items: center;
+  position: fixed;
+  z-index: 1;
+  /* left: 0; */
+  right: 2%;
+  top: 0;
+  width: clamp(340px,40%,450px);
+  height: clamp(520px,80%,750px);
+  overflow: auto;
+  /* background-color: rgba(0, 0, 0, 0.4); */
+  background-color:white;
+  /* border-radius: 15%; */ 
+  border-radius: 1rem;
+ transition: opacity 3.8s ease-in-out, visibility 5.3s ease-in-out;
+ }
+
+ .register-modal {
+  grid-gap: 0rem;
+  grid-template-rows: .2fr 1.2fr .2fr .2fr;
+ }
+
+
+ .login-form, .register-form {
+  display: grid;
+  grid-gap:1.6rem;
+  place-items: center;
+  font-size: larger;
+  width: 100%;
+ }
+ /* Modal content */
+ .modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+ }
+
+ .register-form > li {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1.5fr;
+  
+ }
+
+ .login-modal li {
+  display: flex;
+  column-gap: 1rem;
+  padding: 1.5%;
+ }
+
+ /* Close button */
+ .close {
+  color: #aaa;
+  float: right;
+  /* font-size: 28px; */
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  
+ }
+
+ .close:hover,
+ .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+ }
+
+
+ .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #000;
+}

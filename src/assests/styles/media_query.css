@@ -1,0 +1,167 @@
+@media (max-width:768px){
+ body {
+  background-color: rgb(255, 255, 255);
+}
+#container{
+ grid-template-rows:  .1fr 0.2fr 10fr 1fr;
+ padding: 0% 2% 0px 2% ;
+ gap: .5rem;
+}
+
+#container .header{
+ font-size: 10px ; 
+}
+
+.black-color {
+ color: black;
+ font-weight: 400;
+ font-family: arial;
+ font-size: 10px ;
+}
+
+ .header>h1{
+ font-size: 1rem;
+}
+
+#container .main{
+ display:grid;
+ grid-area: main;
+ grid-template-columns:repeat(2,1fr);
+ place-content: center;
+ grid-gap: 1rem;
+ align-content: center;
+ /* max-width: 90%; */
+ padding:1%;
+}
+
+.main > h1{
+ display:grid;
+ grid-gap: 1fr;
+ border: 1px solid red;
+ /* padding-top: 1.5rem; */
+}
+
+[class^="btn-"] {
+ font-size: 9px;
+}
+
+.navbar-brand {
+ font-size: 12px;
+}
+
+.navbar-toggle {
+ display: block;
+}
+
+.circle-green {
+	width: 65px;
+	height: 28px;
+	margin-left: 16px;
+}
+
+.product-image {
+ width:120px;
+ height:170px;
+}
+
+.product-style {
+ max-width: 280px;
+ gap: 1rem;
+}
+
+.navbar-links {
+ display: none;
+ flex-direction: column;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ width: 100%;
+ padding: 20px;
+ background-color: #fff;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-links li {
+ margin: 10px 0;
+}
+
+.navbar-links a {
+ font-size: 1.2rem;
+}
+
+.navbar-links.show {
+ display: flex;
+}
+
+.navbar-links.show li {
+ animation: slideIn 0.5s forwards;
+ animation-delay: calc(var(--i) * 0.1s);
+}
+
+@keyframes slideIn {
+ from {
+   transform: translateY(-50px);
+   opacity: 0;
+ }
+ to {
+   transform: translateY(0);
+   opacity: 1;
+ }
+}
+
+}
+
+@media (max-width: 575px){
+ #container .main, .product-container{
+  grid-template-columns: 1fr;
+  padding:1%; 
+ }
+
+ #container .header{
+box-shadow:none;
+background-color:white;
+width: 100%;
+ }
+
+ .product-style {
+  max-width: 285px;
+  gap: .5rem;
+ }
+
+ .header img{
+  width: 8rem;
+   height: auto;
+ }
+
+ .header {
+  width: 100%;
+ }
+
+
+}
+
+@media (min-width: 1400px){
+
+ #container .main{
+ 
+  grid-gap: 3rem;
+  align-content: center;
+  /* max-width: 90%; */
+  padding:1%;
+ }
+
+ .product-style {
+  max-width: 400px;
+  gap: 2rem;
+ } 
+
+}
+
+@media (width <= 950px){
+  .container{
+    gap: .5rem;
+  }
+  .header {
+    width: 100%;
+   }
+}
