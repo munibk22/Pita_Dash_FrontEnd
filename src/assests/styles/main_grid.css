@@ -72,8 +72,12 @@ place-items:center;
 
 .submenu {
  display: grid;
- grid-gap: .5rem;
+ grid-gap: .9rem;
  grid-template-columns: 1fr 1fr;
  align-items: baseline;
 };
+
+.submenu-fries {
+ /* width: 20rem; */
+}
 

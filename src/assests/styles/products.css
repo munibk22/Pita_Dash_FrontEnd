@@ -14,8 +14,8 @@ align-items:baseline;
 .card-container {
  display:grid;
  grid-template-rows: .3fr .8fr .2fr .5fr;
- place-items: center;
- align-items: center;
+ /* place-items: center; */
+ /* align-items: center; */
  max-width:385px;
  grid-gap: 1.5rem;
  min-height: 550px;
@@ -33,18 +33,20 @@ align-items:baseline;
 .meal-selection {
  display: grid;
  grid-gap: 1rem;
- grid-template-columns: 1fr .8fr;
+ grid-template-columns: 2fr .5fr;
  /* grid-template-rows: 1fr 1fr; */
 }
 
 .drink-selection{
  display:grid;
  grid-gap:.8rem;
+ /* width: 8rem; */
  };
 
- .submenu {
+ /* .submenu {
   display: grid;
-  grid-gap: .5rem;
-  grid-template-columns: 1fr 1fr;
+  grid-gap: .9rem;
+  grid-template-columns: 3fr 1fr;
   align-items: baseline;
- };
+   width: 20rem;
+ }; */

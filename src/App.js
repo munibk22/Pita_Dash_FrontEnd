@@ -6,20 +6,30 @@ import 'aos/dist/aos.css';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+
+// Make sure to call `loadStripe` outside of a component’s render to avoid
+// recreating the `Stripe` object on every render.
+// const stripePromise = loadStripe('pk_test_51Ir9CYBbKPDTbStSEP3nWgJPTtqXvsCs52VwZIRi4dN1YV8zpdf54HtpTHCVrE49JGrel5ftRh423Y4kKUiLAqH400uIDCTF79');
 
 const App = () => {
   const [products,setProducts] = useState([]);
   const [cartItems, setCartItems] = useState([
-    { id: 1, name: 'Item 1', price: 10,qty:1 },
-    { id: 2, name: 'Item 2', price: 20,qty:1 },
-    { id: 3, name: 'Item 3', price: 30,qty:1 },
+    { id: 1, name: 'Item 1', price: 10,quantity:0 },
+    { id: 2, name: 'Item 2', price: 20,quantity:0 },
+    { id: 3, name: 'Item 3', price: 30,quantity:0 },
   ]);
 
   const [items, setItems] = useState([
-    { id: 1, name: 'Item 1', price: 10,qty:1 },
-    { id: 2, name: 'Item 2', price: 20,qty:1 },
-    { id: 3, name: 'Item 3', price: 30,qty:1 },
+    { id: 1, name: 'Item 1', price: 10,quantity:0 },
+    { id: 2, name: 'Item 2', price: 20,quantity:0 },
+    { id: 3, name: 'Item 3', price: 30,quantity:0 },
   ]);
+  const options = {
+    // passing the client secret obtained from the server
+    clientSecret: '{{CLIENT_SECRET}}',
+  };
 
   const fetchProducts = async() =>{
 const {data} = await commerceService.products.list();
@@ -54,6 +64,9 @@ setProducts(data);
  <Products products={products}  items={cartItems} onRemove={handleRemoveItem}
   removeItem={removeItem}/>
   <ToastContainer />
+  {/* <Elements stripe={stripePromise} options={options}> */}
+      {/* <CheckoutForm /> */}
+    {/* </Elements> */}
  </div>
   );
 }

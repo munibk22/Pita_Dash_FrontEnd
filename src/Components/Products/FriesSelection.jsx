@@ -8,7 +8,7 @@ const handleOptionChange = (e) => {
 }
   return (
    <ul className="drink-selection " data-aos="fade-down">
-   <h4 >- Fries Selection -</h4>
+   <h4 >- Fries Selection</h4>
    <li> 
    <label title='Choose Drink'>
    <input type='radio' name='fries-group' value = 'regular' 

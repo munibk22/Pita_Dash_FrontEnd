@@ -34,9 +34,9 @@ const Products = (props) =>{
 {/* <div className='product-container'> */}
 
 {products && products.map(product =>
-<div className="card-container " key={product.id}>
+
    <Product  props = {product} />
-   </div>) }
+   ) }
    
   </div>
  
