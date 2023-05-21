@@ -1,6 +1,8 @@
 import React,{ useState,useRef } from 'react'
 import { FetchService } from './AjaxCalls';
 import {toast} from 'react-toastify';
+import {useDispatch} from 'react-redux';
+import {addCustomer} from '../Redux/customerSlice';
 
 
 const Register = () => {
@@ -15,6 +17,7 @@ const Register = () => {
  });
   const [username,setUserName] = useState([]);
   const modalRef = useRef(null);
+  const dispatch = useDispatch();
  
  const handleClose = ()=>{
   console.log('clicked close');
@@ -35,6 +38,7 @@ try {
  let {data,responseStatus} = await FetchService.postData('auth/register',registrationData);
  if(responseStatus === 200){
     console.log(data);
+    await dispatch(addCustomer(data))
     toast.success(data.firstName + ' has registered successfully')
     setUserName(data);
     handleClose();
@@ -62,19 +66,22 @@ try {
     <form method='dialog'  className='register-modal'
     onSubmit={handleSubmit}>
     <button type="button" className='close' onClick={handleClose}>X</button>
-     <h1>Enter Registration Details</h1>
+     <h4>Enter Registration Details</h4>
+   
     <ul className='register-form'>
-
+    <hr />
      <li><label htmlFor="firstName">First Name</label>
         <input onChange={handleInputChange } tpye="text" placeholder='Enter
-         First Name here..' id='firstName' name='firstName' />
+         First Name here..' id='firstName' name='firstName' required/>
         </li>
         <li><label htmlFor="lastName">Last Name</label>
         <input onChange={handleInputChange } tpye="lastName" placeholder='Enter
          Last Name here..' id='lastName' name='lastName' />
         </li>
-        <li><label htmlFor="userName">UserName/Email</label>
-        <input onChange={handleInputChange } tpye="userName" placeholder='youremail@mail.com..' id='userName' name='userName' />
+        <li><label htmlFor="userName">Email</label>
+        <input onChange={handleInputChange } tpye="email" placeholder='youremail@mail.com..' 
+        id='userName' name='userName'
+        required />
         </li>
         <li><label htmlFor="password">Password</label>
         <input onChange={handleInputChange } tpye="password" placeholder='Enter
@@ -88,7 +95,7 @@ try {
         <input onChange={handleInputChange } tpye="zipCode" placeholder='435xx..' id='zipCode' name='zipCode' />
         </li>
         <li><label htmlFor="phone">Phone</label>
-        <input onChange={handleInputChange } tpye="phone" placeholder='xxx-xxx-xxxx' id='phone' name='phone' />
+        <input onChange={handleInputChange } tpye="phone" placeholder='xxx-xxx-xxxx' id='phone' name='phone' required/>
         </li>
     </ul>
     <li><button type="submit" className='btn-blue'>Submit</button></li>

@@ -6,8 +6,10 @@ import '../assests/styles/main_grid.css'
 import '../assests/styles/products.css';
 import '../assests/styles/navbar.css';
 import '../assests/styles/buttons.css';
-import '../assests/styles/media_query.css';
 import '../assests/styles/signup.css';
+import '../assests/styles/products.css';
+import '../assests/styles/stripe.css';
+import '../assests/styles/media_query.css';
 
 const ComponentIndex = () => {
   return (

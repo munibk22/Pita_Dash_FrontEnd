@@ -75,11 +75,6 @@ button {
  font-size: 1rem;
 }
 
-.login-form {
- width: 100%;
- margin: 0;
- display: grid;
-}
 
 .login-form input.control::placeholder {
  color: #aaa7bc;
@@ -144,33 +139,34 @@ button {
 
 dialog {
   z-index: 10;
-  margin-top: 10px;
-  background: green;
-  border: none;
+  /* margin-top: 10px; */
+  /* background: green; */
+  /* border: none; */
   border-radius: 1rem;
 }
 dialog::backdrop {
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 	/* Modal background */
  .login-modal, .register-modal {
   z-index: 10;
   display: grid; 
   grid-gap:1rem;
-  place-items: center;
+  justify-content: start;
   position: fixed;
-  z-index: 1;
   /* left: 0; */
-  right: 2%;
-  top: 0;
-  width: clamp(340px,40%,450px);
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%);
+  width: clamp(15rem,25rem,35rem);
   height: clamp(520px,80%,750px);
   overflow: auto;
   /* background-color: rgba(0, 0, 0, 0.4); */
   background-color:white;
-  /* border-radius: 15%; */ 
   border-radius: 1rem;
  transition: opacity 3.8s ease-in-out, visibility 5.3s ease-in-out;
+ padding: 2%;
+ font-size: 1rem;
  }
 
  .register-modal {
@@ -181,10 +177,15 @@ dialog::backdrop {
 
  .login-form, .register-form {
   display: grid;
-  grid-gap:1.6rem;
-  place-items: center;
-  font-size: larger;
-  width: 100%;
+  align-items: center;
+  font-size: 1rem;
+  /* width: 100%; */
+  /* border-left: 1px solid #d0cccc; */
+  /* padding: 2%; */
+ }
+
+ .login-form {
+  max-height:80%;
  }
  /* Modal content */
  .modal-content {
@@ -205,7 +206,7 @@ dialog::backdrop {
  .login-modal li {
   display: flex;
   column-gap: 1rem;
-  padding: 1.5%;
+  /* padding: 1.5%; */
  }
 
  /* Close button */
@@ -215,8 +216,8 @@ dialog::backdrop {
   /* font-size: 28px; */
   font-weight: bold;
   position: absolute;
-  top: 15px;
-  right: 15px;
+  top: 25px;
+  right: 25px;
   font-size: 20px;
   font-weight: bold;
   
@@ -241,5 +242,20 @@ dialog::backdrop {
 }
 
 .close-button:hover {
+  color: #000;
+}
+
+.close-button2 {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #727070;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.close-button2:hover {
   color: #000;
 }

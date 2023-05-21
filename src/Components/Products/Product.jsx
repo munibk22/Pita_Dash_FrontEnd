@@ -2,13 +2,13 @@ import React,{useState,useEffect} from 'react'
 import DrinkSelection from './DrinkSelection'
 import FriesSelection from './FriesSelection';
 import { useDispatch,useSelector} from 'react-redux';
-import { cartActions } from '../Redux/store';
+import { addItem,removeItem,clearCart } from '../Redux/cartSlice';
 
 const Product = ({props}) => {
- console.log(props);
- // const {id,title,image,description,price} = "props";
- const {id,name,image,description,price} = {props};
- console.log(name);
+  // const {id,title,image,description,price} = "props";
+  const {id,name,image,description,price} = props;
+  console.log(name);
+  console.log(props);
 const [mealPrice,setMealPrice] = useState(+props.price.raw+3);
 const [shwarmaMeal,setShwarmaMeal] = useState(false);
 const dispatch = useDispatch();
@@ -17,27 +17,23 @@ const totalQuantity = useSelector(state => state.cart.totalQuantity);
     const storeItems = useSelector(state => state.cart.items);
     const [qty,setQty] = useState(totalQuantity);
     
-    // useEffect(()=>{
-    //   setQty(totalQuantity);
-    // },[qty]);
-
 
 function addToCartHandler(id) {
-  dispatch(cartActions.addItem(id));
+  dispatch(addItem(id));
   // dispatch(cartActions.increaseQuantity(id));
 };
 
 const removeItemHandler= (id) => {
-  dispatch(cartActions.removeItem(id))
+  dispatch(removeItem(id))
 };
 
 const decreaseQuantityHandler= (id) => {
   // dispatch(cartActions.decreaseQuantity(id));
-  dispatch(cartActions.removeItem(id))
+  dispatch(removeItem(id))
 };
 
 function increaseQuantityHandler(id) {
-  dispatch(cartActions.increaseQuantity(id));
+  // dispatch(increaseQuantity(id));
 }
 
 const handleMealSelections = (async (e,type) =>{

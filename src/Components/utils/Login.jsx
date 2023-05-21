@@ -1,7 +1,9 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef} from 'react'
 // import {FetchService} from './AjaxCalls'
 import {FetchService} from './AjaxCalls'
 import {toast} from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { addCustomer,removeCustomer } from '../Redux/customerSlice'; 
 
 const Login = () => {
 const [showDialog,setShowDialog] = useState(false);
@@ -10,9 +12,9 @@ const [userForm, setUserForm] = useState({
   password:'',
 })
 const [user,setUser] = useState({});
-
 const modalRef = useRef(null);
 const dialog = document.querySelector("dialog")
+const dispatch = useDispatch();
 
 const toggleLogin = (e) => {
 e.preventDefault();
@@ -43,10 +45,13 @@ try {
   // const data = await response.json();
   if(responseStatus === 200){
     setUser(data.user)
+    await dispatch(addCustomer(data.user))
+    
+
     // console.log(data.user.username + " logged in!");    
-    toast.success(data.user.username + " has logged in Successfully",{
+    toast.success("You were logged in Successfully",{
       position: toast.POSITION.TOP_LEFT,
-      autoClose: 3000,
+      autoClose: 2500,
       draggable: true,
     });
     modalRef.current.close();  //Close Modal
@@ -55,7 +60,7 @@ try {
   console.log(error);
   toast.error("Could not log in, please try again..",{
     position: toast.POSITION.TOP_LEFT,
-    autoClose: 3000,
+    autoClose: 2000,
     draggable: true,
   });
   modalRef.current.close();

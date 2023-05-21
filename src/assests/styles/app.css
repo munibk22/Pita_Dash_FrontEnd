@@ -336,3 +336,10 @@ input::placeholder {
    font-size:small;
    font-family: auto;
 }
+
+.font-larger {
+   font-size: large;
+}
+.font-bold {
+   font-weight: bold;
+}

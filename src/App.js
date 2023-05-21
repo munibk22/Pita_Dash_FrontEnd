@@ -6,8 +6,8 @@ import 'aos/dist/aos.css';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
-import {Elements} from '@stripe/react-stripe-js';
-import {loadStripe} from '@stripe/stripe-js';
+import './assests/styles/media_query.css';
+
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -45,7 +45,7 @@ setProducts(data);
       delay: 100,
     });
 
-  },[]);
+  },[0]);
 
   console.log(products);
 
@@ -64,9 +64,6 @@ setProducts(data);
  <Products products={products}  items={cartItems} onRemove={handleRemoveItem}
   removeItem={removeItem}/>
   <ToastContainer />
-  {/* <Elements stripe={stripePromise} options={options}> */}
-      {/* <CheckoutForm /> */}
-    {/* </Elements> */}
  </div>
   );
 }

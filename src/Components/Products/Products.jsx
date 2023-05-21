@@ -31,10 +31,7 @@ const Products = (props) =>{
 
  return(
   <div className='product-container' data-aos="fade-down">
-{/* <div className='product-container'> */}
-
 {products && products.map(product =>
-
    <Product  props = {product} />
    ) }
    
