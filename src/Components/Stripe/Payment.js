@@ -6,7 +6,7 @@ import { loadStripe } from "@stripe/stripe-js";
 import {url} from '../utils/AjaxCalls'
 import { useSelector } from "react-redux";
 
-function Payment({items,handleCheckout,amount,description,customer}) {
+function Payment({items,handleCheckout,amount,description,customer,handleToggle}) {
   const [stripePromise, setStripePromise] = useState(null);
   // const stripePromise = loadStripe("pk_test_51Ir9CYBbKPDTbStSEP3nWgJPTtqXvsCs52VwZIRi4dN1YV8zpdf54HtpTHCVrE49JGrel5ftRh423Y4kKUiLAqH400uIDCTF79");
 // const items = useSelector(state => state.cart)  
@@ -51,7 +51,11 @@ function Payment({items,handleCheckout,amount,description,customer}) {
      
       {clientSecret && stripePromise && (
         <Elements stripe={stripePromise} options={options} key={clientSecret}>
-          <CheckoutForm handleCheckout={handleCheckout}/>
+          <CheckoutForm
+          handleCheckout={handleCheckout}
+          amount={amount}
+          handleToggle={handleToggle}
+          />
         </Elements>
       )}
     </>

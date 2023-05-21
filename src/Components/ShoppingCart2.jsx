@@ -99,6 +99,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
   amount={totalPrice}
   handleCheckout={handleCheckout}
   customer={customer}
+  handleToggle={handleToggle}
   />
   
   <button id="close-dialog" className="checkoutModal-close red"

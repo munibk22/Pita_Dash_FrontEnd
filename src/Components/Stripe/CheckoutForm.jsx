@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import {toast} from 'react-toastify';
+import {useDispatch} from 'react-redux';
+import {clearCart} from '../Redux/cartSlice';
 import {
   PaymentElement,
   LinkAuthenticationElement,
@@ -6,10 +9,10 @@ import {
   useElements
 } from "@stripe/react-stripe-js";
 
-export default function CheckoutForm({handleCheckout}) {
+export default function CheckoutForm({handleCheckout,amount,handleToggle}) {
   const stripe = useStripe();
   const elements = useElements();
-
+  const dispatch = useDispatch();
   // const [email, setEmail] = useState('MUNIB22@GMAIL.COM');
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -31,7 +34,7 @@ export default function CheckoutForm({handleCheckout}) {
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
         case "succeeded":
-          setMessage("Payment succeeded!");
+          // setMessage("Payment succeeded!");
           console.log(paymentIntent.status);
           break;
         case "processing":
@@ -70,9 +73,28 @@ export default function CheckoutForm({handleCheckout}) {
       },
       redirect: 'if_required',
     },)
-    .then((result)=>{console.log("DONE From Stripe")
-      // paymentModal.removeAttribute('open');
-      handleCheckout();
+    .then((result)=>{
+      console.log(result)
+      if(result.error){
+        console.log("ERROR From Stripe")
+        // paymentModal.removeAttribute('open');
+       
+        handleCheckout();        
+        toast.error(`Payment was not successfull, ${result.error.message}`,{
+          position: toast.POSITION.TOP_CENTER,
+          autoClose:4000,
+        })
+      }else {
+        console.log("DONE From Stripe")
+        // paymentModal.removeAttribute('open');
+        handleCheckout();
+        toast.success(`Payment in the amount $${amount} was successfull!`,{
+          position: toast.POSITION.TOP_CENTER,
+          autoClose:3000,
+        })
+        handleToggle();
+        dispatch(clearCart());
+      }
   });
 
     // This point will only be reached if there is an immediate error when
@@ -99,7 +121,7 @@ export default function CheckoutForm({handleCheckout}) {
         id="link-authentication-element"
         onChange={(e) => setEmail(e.target.value)}
       /> */}
-       <h3>Enter Payment Details</h3>
+       <h3>Enter Payment Details - Total Amount ${amount}</h3>
       <PaymentElement id="payment-element" options={paymentElementOptions} />
       <button disabled={isLoading || !stripe || !elements} id="submit"className="stripe-button">
         <span id="button-text">
