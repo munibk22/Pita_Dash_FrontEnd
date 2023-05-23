@@ -66,20 +66,23 @@ const ShoppingCart2 = ({onRemoveItem}) => {
 
 
  return (
-  <span> 
+  <div> 
+    {cartItems.length > 1 ?<>
 <details className='cart-container'>
-<summary >{cartItems.length > 0 ? (<><span > 🛒 Shopping Cart Items </span> <span
+<summary > <span > 🛒 Shopping Cart Items </span> <span
  className='red font-larger font-bold '>
- {cartItems.reduce((acc,item )=> acc +item.quantity,0)}</span></>) : (<span symbol="🛒">
-   🛒 Your cart is empty {customer.firstName}</span>) } </summary>
+ {cartItems.reduce((acc,item )=> acc +item.quantity,0)}</span> </summary>
+
       {  (      
       <ul className='cart-summary '>
-          {cartItems.map((item) => (
-            <li key={item.id}>
+          {cartItems.map((item) => {
+            if(item.id)
+           return (          
+              <li key={item.id}>
               {item.name} - ${item.price} &nbsp;&nbsp;&nbsp;
               <button className='btn-red-cart' onClick={() => onRemoveItem(item)}>Remove</button>
             </li>
-          ))}
+          )})}
         <div>
       <p>Total Quantity: {totalQuantity}</p>
       <p>Total Price: ${totalPrice.toFixed(2)}</p>
@@ -89,7 +92,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
 
         </ul>
       )}
-</details>
+</details></>  : <span symbol="🛒">  🛒 Your cart is empty {customer.firstName}</span>}
 {checkoutModal && 
 (<dialog id="my-dialog" className="checkoutModal">
 <div className="checkoutModal-content"> 
@@ -108,7 +111,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
   </div>
 </dialog>)
 }
-</span>
+</div>
  );
 }
 

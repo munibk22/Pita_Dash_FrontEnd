@@ -30,8 +30,12 @@ const totalQuantity = useSelector(state => state.cart.totalQuantity);
 async function addToCartHandler(item) {
   console.log(item);
   await dispatch(addItem(item));
-  const itemQty = storeItems.find(storeItem => storeItem.id === product.id);
-  setQty(itemQty?.quantity);
+  let itemQty = storeItems.find(storeItem => storeItem.id === product.id)?  storeItems.find(storeItem => storeItem.id === product.id)
+  :null;
+  if(itemQty == null)
+  setQty(()=> (1)); 
+  else
+  setQty(()=> itemQty.quantity+1)
   // setCartItems(storeItems);
   // dispatch(cartActions.increaseQuantity(id));
   // setTimeout(()=>{
@@ -51,7 +55,10 @@ async function addToCartHandler(item) {
   
 
 const removeItemHandler= (id) => {
+  console.log(id);
   dispatch(removeItem(id))
+  if(qty !== 0)
+  setQty(()=> qty-1)
 };
 
 const decreaseQuantityHandler= (id) => {
