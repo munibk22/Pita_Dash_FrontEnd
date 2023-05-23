@@ -22,7 +22,7 @@ export const cartSlice = createSlice({
      quantity: 1,    
     });
    else
-    existingItem.totalQuantity++;
+    existingItem.quantity++;
 
     state.totalQuantity++; //Increase total count every push
     state.totalPrice += newItem.price.raw; //update Total every push
@@ -44,11 +44,16 @@ export const cartSlice = createSlice({
   },
   clearCart: (state)=> {
     state.items = [];
-   //  state.totalQuantity  = [];
-   // state.totalPrice = 0;
+    state.totalQuantity  = 0;
+    state.totalPrice = 0;
   },
+  getItem: (state,action) =>{
+    // state.items.filter(item => item.id === action.payload)
+    //  state.items
+  },
+  
  }
 });
 
-export const {addItem,removeItem,clearCart} = cartSlice.actions;
+export const {addItem,removeItem,clearCart,getItem} = cartSlice.actions;
 export default cartSlice.reducer;

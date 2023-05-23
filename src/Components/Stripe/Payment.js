@@ -16,7 +16,6 @@ function Payment({items,handleCheckout,amount,description,customer,handleToggle}
     fetch(url+"payment/config").then(async (r) => {
       // const { publishableKey } = await r.json();
       const publishableKey  = await r.text();
-      console.log(publishableKey);
       setStripePromise(loadStripe(publishableKey));
     });
   
@@ -33,7 +32,6 @@ function Payment({items,handleCheckout,amount,description,customer,handleToggle}
     }).then(async (result) => {
       var {clientSecret}  = await result.json();
       setClientSecret(clientSecret);
-      console.log(clientSecret);
     })
     .catch(error => console.error(error));
   }, []);
@@ -41,20 +39,27 @@ function Payment({items,handleCheckout,amount,description,customer,handleToggle}
   const appearance = {
     theme: 'stripe',
   };
+  // Enable the skeleton loader UI for the optimal loading experience.
+  const loader = 'auto';
+
   const options = {
     clientSecret,
     appearance,
+    loader
   };
+
 
   return (
     <>
      
       {clientSecret && stripePromise && (
-        <Elements stripe={stripePromise} options={options} key={clientSecret}>
+        <Elements stripe={stripePromise} options={{clientSecret, appearance, loader}} key={clientSecret}>
           <CheckoutForm
           handleCheckout={handleCheckout}
           amount={amount}
           handleToggle={handleToggle}
+          customer={customer}
+          options={options}
           />
         </Elements>
       )}

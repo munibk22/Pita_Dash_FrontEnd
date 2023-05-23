@@ -45,7 +45,7 @@ setProducts(data);
       delay: 100,
     });
 
-  },[0]);
+  },[]);
 
   console.log(products);
 

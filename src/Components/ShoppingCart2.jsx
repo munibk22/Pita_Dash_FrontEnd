@@ -7,7 +7,7 @@ import CheckoutForm from './Stripe/CheckoutForm';
 const ShoppingCart2 = ({onRemoveItem}) => {
   const storeItems = useSelector(state => state.cart.items);
   const customer = useSelector(state => state.customer)
-  
+  console.log(customer);
     const [items, setItems] = useState(['empty test cart']);
     const [cartItems, setCartItems] = useState([]
       // { id: 1, name: 'Item 1', price: 10,qty:1 },

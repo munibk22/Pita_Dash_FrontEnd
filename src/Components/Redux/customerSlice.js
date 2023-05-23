@@ -4,7 +4,7 @@ const initialState = {
  id:null,
  firstName: "Not Logged In",
  lastName: "in",
- email:"test@gmail.com",
+ email:"youremail@email.com",
  address:"123 apple st",
  zipCode:"43528",
  phone:"555-555-3219",

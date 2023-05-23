@@ -9,11 +9,12 @@ import {
   useElements
 } from "@stripe/react-stripe-js";
 
-export default function CheckoutForm({handleCheckout,amount,handleToggle}) {
+export default function CheckoutForm({handleCheckout,amount,handleToggle,customer,options}) {
   const stripe = useStripe();
   const elements = useElements();
   const dispatch = useDispatch();
   // const [email, setEmail] = useState('MUNIB22@GMAIL.COM');
+  const [email, setEmail] = useState(customer.email);
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const paymentModal = document.getElementById('my-dialog');
@@ -22,18 +23,29 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle}) {
     if (!stripe) {
       return;
     }
-
     const clientSecret = new URLSearchParams(window.location.search).get(
       "payment_intent_client_secret"
     );
-
     if (!clientSecret) {
       return;
+    }
+
+    const mountEmail = ()=>{
+      // if(customer.email){
+        let emailAddress = customer.email ? customer.email : "youremail@email.com";
+          // Create the Link Authentication Element with the defaultValues option
+      const linkAuthenticationElement = elements.create("linkAuthentication", {defaultValues: {email:emailAddress}});
+
+      // Mount the Link Authentication Element to its corresponding DOM node
+      linkAuthenticationElement.mount("#link-authentication-element");
+        console.log(customer.email);
+      // }
     }
 
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
         case "succeeded":
+          // setTimeout(test,9000)
           // setMessage("Payment succeeded!");
           console.log(paymentIntent.status);
           break;
@@ -50,7 +62,7 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle}) {
           setMessage("Something went wrong.");
           break;
       }
-    });
+    }).then(()=>mountEmail());
   }, [stripe]);
 
   const handleSubmit = async (e) => {
@@ -111,18 +123,24 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle}) {
     setIsLoading(false);
   };
 
-  const paymentElementOptions = {
-    layout: "tabs"
-  }
+    // Create the Link Authentication Element with the defaultValues option
+  // const linkAuthenticationElement = elements.create("linkAuthentication", {defaultValues: {email: "foo@bar.com"}});
+  // const {clientSecret, loader}=options
+  // const linkAuthenticationElement = elements.create({clientSecret, loader});
+
+
+// Mount the Link Authentication Element to its corresponding DOM node
+// linkAuthenticationElement.mount("#link-authentication-element");
+
 
   return (
     <form id="payment-form" onSubmit={handleSubmit} className="stripe-form ">
-      {/* <LinkAuthenticationElement
+      <LinkAuthenticationElement
         id="link-authentication-element"
-        onChange={(e) => setEmail(e.target.value)}
-      /> */}
+        onChange={(e) => setEmail(customer.email)}      
+           />
        <h3>Enter Payment Details - Total Amount ${amount}</h3>
-      <PaymentElement id="payment-element" options={paymentElementOptions} />
+      <PaymentElement id="payment-element"  />
       <button disabled={isLoading || !stripe || !elements} id="submit"className="stripe-button">
         <span id="button-text">
           {isLoading ? <div className="spinner" id="spinner"></div> : "Pay now"}
