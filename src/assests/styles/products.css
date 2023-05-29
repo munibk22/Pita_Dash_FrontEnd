@@ -21,6 +21,11 @@ align-items:baseline;
  min-height: 550px;
 }
 
+.card-img  {
+  object-fit: cover;
+  /* width: 100%; */
+  padding: 3%;
+}
 .add-to-cart {
  display: grid;
  grid-template-rows: 1fr;

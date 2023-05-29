@@ -38,11 +38,13 @@ export const cartSlice = createSlice({
 
    if (existingItem.quantity === 1) {
     state.items = state.items.filter(item => item.id !== itemToRemoveId.id);
-  } else {
+  } else if (existingItem.quantity > 0) {
     existingItem.quantity = existingItem.quantity-1;
   }
+  if (state.totalQuantity  > 0){
     state.totalQuantity = state.totalQuantity-1;
     state.totalPrice = state.totalPrice - itemToRemoveId.price.raw;
+  }
   },
   clearCart: (state)=> {
     state.items = [];

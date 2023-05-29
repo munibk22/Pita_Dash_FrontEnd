@@ -3,6 +3,7 @@ import DrinkSelection from './DrinkSelection'
 import FriesSelection from './FriesSelection';
 import { useDispatch,useSelector} from 'react-redux';
 import { addItem,removeItem,getItem } from '../Redux/cartSlice';
+import {toast} from 'react-toastify';
 
 const Product = (props) => {
   // const {id,title,image,description,price} = "props";
@@ -36,6 +37,10 @@ async function addToCartHandler(item) {
   setQty(()=> (1)); 
   else
   setQty(()=> itemQty.quantity+1)
+
+  toast.success(`${item.name} was added to cart`,{
+    autoClose: 1500,
+  })
   // setCartItems(storeItems);
   // dispatch(cartActions.increaseQuantity(id));
   // setTimeout(()=>{
@@ -59,6 +64,11 @@ const removeItemHandler= (id) => {
   dispatch(removeItem(id))
   if(qty !== 0)
   setQty(()=> qty-1)
+  else{
+    setQty('')
+
+  }
+
 };
 
 const decreaseQuantityHandler= (id) => {

@@ -71,7 +71,9 @@ const ShoppingCart2 = ({onRemoveItem}) => {
 <details className='cart-container'>
 <summary > <span > 🛒 Shopping Cart Items </span> <span
  className='red font-larger font-bold '>
- {cartItems.reduce((acc,item )=> acc +item.quantity,0)}</span> </summary>
+ {/* {cartItems.reduce((acc,item )=> acc +item.quantity,0)} */}
+ {totalQuantity}
+ </span> </summary>
 
       {  (      
       <ul className='cart-summary '>
