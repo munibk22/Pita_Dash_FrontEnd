@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import Login from './utils/Login';
 const Nav = () => {
   
 
@@ -50,6 +50,12 @@ const Nav = () => {
          <a href="#" className="nav-link special-color">
           {/* <i className="fas fa-home"></i> */}
          <span className='black-color'>Home</span> </a>
+       </li>
+       <li className="nav-item">
+       <span className='black-color'><h6><Login /></h6></span>
+       </li>
+       <li className="nav-item">
+         <span className='black-color'><h6><Register /></h6></span>
        </li>
        <li className="nav-item">
          <a href="#" className="nav-link special-color">

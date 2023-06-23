@@ -152,6 +152,13 @@
   font-size: 1rem;
  }
 
+ .card-img {
+  background-position: 50%;
+  background-size: 100%;
+  object-fit: cover;
+  padding: 3%;
+}
+
 }
 
 @media (width <= 575px){
@@ -185,7 +192,21 @@
    padding: 8%;
    /* font-size: initial; */
   }
+
+  .card-img {
+    background-position: 50%;
+    background-size: 100%;
+    object-fit: cover;
+    padding: 3%;
+}
  
+hr {
+  display: none;
+}
+
+.btn-green-login, .btn-purple {
+  display: none;
+}
  
  }
 
@@ -195,6 +216,13 @@
   .login-modal, .register-modal {
     padding: 8%;
    }
+
+   .card-img {
+    background-position: 50%;
+    background-size: 100%;
+    object-fit: cover;
+    padding: 3%;
+}
 }
 
 
