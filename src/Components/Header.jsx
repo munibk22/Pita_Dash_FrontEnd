@@ -30,8 +30,8 @@ const Header = () => {
       </div>
     {/* <img alt='circle-logo' src={arrow} className='circle-green'></img> */}
     <h1><Nav /></h1> 
-    <h6><Login /></h6> 
-    <h6><Register /></h6> 
+    <span className="login-desktop"><h6><Login /></h6> </span>
+    <span className="register-desktop"><h6><Register /></h6></span> 
     {/* <h6>Shopping Cart </h6>  */}
     {/* <h3><Cart /></h3>  */}
      <div className='width-90'> <ShoppingCart2 /></div>

@@ -35,6 +35,7 @@ const Nav = () => {
   //     });
   //    }
   //  }, [])
+ //const loginInstance = new Login;
 
   return (
 <>
@@ -53,10 +54,13 @@ const Nav = () => {
          <span className='black-color'>Home</span> </a>
        </li>
        <li className="nav-item">
-       <span className='black-color'><h6><Login /></h6></span>
+       <span className='black-color'>
+        <Login />
+        {/* <button className='btn-green-login-mobile hide' onClick={handleMobileLogin}>Login</button> */}
+        </span>
        </li>
        <li className="nav-item">
-         <span className='black-color'><h6><Register /></h6></span>
+         <span className='black-color'><Register /></span>
        </li>
        <li className="nav-item">
          <a href="#" className="nav-link special-color">

@@ -344,3 +344,7 @@ input::placeholder {
 .font-bold {
    font-weight: bold;
 }
+
+.hide {
+   display: none;
+}
