@@ -1,8 +1,8 @@
 html,*{
  box-sizing:border-box;
  scroll-behavior: smooth;
- padding:0;
- margin:0;
+ padding:0px;
+ margin:0px;
  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   list-style-type: none;
@@ -25,8 +25,8 @@ body{
  align-items: center;
  /* padding: 20px; */
  /* background-color: #f8f8f8; */
- background-color: #fff;
- box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+ /* background-color: #fff;
+ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
 }
 
 .navbar-toggle {
@@ -80,7 +80,8 @@ body{
 .nav-link {
  display: flex;
  align-items: center;
- font-size: 14px;
+ /* font-size: 14px; */
+ font-size: .8vw;
  color: #817ff1;
  text-decoration: none;
 }

@@ -4,7 +4,8 @@
 // import 'react-toastify/dist/ReactToastify.css';
 // class FetchService{
   // this.uri = uri;
-  export const url = "http://localhost:8080/";
+  // export const url = "http://localhost:8080/";
+  export const url = "https://pitadashbackend-production.up.railway.app/";
   
   export const FetchService = {
   // constructor(uri){

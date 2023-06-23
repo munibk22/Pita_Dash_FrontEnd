@@ -6,7 +6,9 @@ import {addCustomer} from '../Redux/customerSlice';
 
 
 const Register = () => {
+  var randomNumber = Math.floor(Math.random() * 20000) + 1;
  const [registrationData, setRegistrationData] = useState({
+  id: randomNumber,
   firstName:'',
   lastName:'',
   userName:'',

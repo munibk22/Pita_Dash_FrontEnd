@@ -22,9 +22,11 @@ align-items:baseline;
 }
 
 .card-img  {
-  object-fit: cover;
+  object-fit: contain;
   /* width: 100%; */
   padding: 3%;
+  background-size: 100%;
+  background-position: center;
 }
 .add-to-cart {
  display: grid;
