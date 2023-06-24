@@ -25,8 +25,8 @@ function Payment({items,handleCheckout,amount,description,customer,handleToggle}
       body: JSON.stringify({
         items,
        amount,
-       stripeEmail:"cus_JUFRrOX9q3205v",
-      //  stripeEmail:customer.stripeId,
+       //stripeEmail:"cus_JUFRrOX9q3205v",
+      stripeEmail:customer.stripeId,
        description,
       }),
     }).then(async (result) => {
