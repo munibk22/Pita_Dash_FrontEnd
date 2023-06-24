@@ -243,10 +243,10 @@ hr {
   display: none;
 }
 
-.btn-green-login, .btn-purple {
+.navbar .btn-green-login, .btn-purple {
   /* display: none; */
-  font-size: 85%;
-  padding: 6px;
+  font-size: 125%;
+  /* padding: 6px; */
 }
  
  }

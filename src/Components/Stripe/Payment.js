@@ -15,7 +15,7 @@ function Payment({items,handleCheckout,amount,description,customer,handleToggle}
   useEffect(() => {
     fetch(url+"payment/config").then(async (r) => {
       // const { publishableKey } = await r.json();
-      const publishableKey  = await r.text();
+      const publishableKey  = await r.json();
       setStripePromise(loadStripe(publishableKey));
     });
   
