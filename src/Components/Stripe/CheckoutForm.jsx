@@ -80,7 +80,7 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle,custome
       elements,
       confirmParams: {
         // Make sure to change this to your payment completion page
-        return_url: "http://www.pitadash.com",
+        return_url: "https://www.pitadash.com",
         
       },
       redirect: 'if_required',
