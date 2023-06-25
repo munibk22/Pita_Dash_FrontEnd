@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import { Elements } from "@stripe/react-stripe-js";
 import CheckoutForm from "./CheckoutForm";
+import Checkout from "./Checkout";
 import { loadStripe } from "@stripe/stripe-js";
 import {url} from '../utils/AjaxCalls'
 import { useSelector } from "react-redux";
@@ -68,12 +69,12 @@ function Payment({items,handleCheckout,amount,description,customer,handleToggle,
         // options={{clientSecret, appearance, loader}}
         options={options}
          key={clientSecret}>
-          <CheckoutForm
-          handleCheckout={handleCheckout}
-          amount={amount}
-          handleToggle={handleToggle}
-          customer={customer}
-          options={options}
+          <Checkout
+          // handleCheckout={handleCheckout}
+          // amount={amount}
+          // handleToggle={handleToggle}
+          // customer={customer}
+          // options={options}
           />
         </Elements>
       )}
