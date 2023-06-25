@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useRef } from 'react';
 import { useSelector } from 'react-redux';
 import Payment from './Stripe/Payment'
 import CheckoutForm from './Stripe/CheckoutForm';
@@ -24,6 +24,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
     const [cs, setCS] = useState('');
     const [name,setNames] = useState([]);
     const [counter,setCounter] = useState(0);
+    const checkoutModalRef = useRef(null);
     function calculateTotal(items, {shipping = SHIPPING_DEFAULT=0, discount =0} = {}) {
       //  
       if (items == null || items.length === 0) return 0;
@@ -62,7 +63,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
     }
     
     const handleCheckout = async() => {
-      // const name = await cartItems.map(item => item.name)
+      const name = await cartItems.map(item => item.name)
       if(cartItems)   
       var itemAry=  cartItems.map(item => item.name)
       setNames(()=>itemAry); 
@@ -72,7 +73,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
           body: JSON.stringify({
             items: cartItems,
             currency: "usd",
-            // description:name.join(', '),
+            description:name.join(', '),
             amount: totalPrice,
            //stripeEmail:"cus_JUFRrOX9q3205v",
           stripeEmail:customer.stripeId,
@@ -83,6 +84,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
           await setCS(clientSecret);
         })
         .then(()=> {
+          checkoutModalRef.current.showModal();
           if(counter ===0){            
             setCheckoutModal(!checkoutModal)
            setCounter(counter+1);
@@ -139,7 +141,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
       )}
 </details></>  : <span symbol="🛒">  🛒 Your cart is empty {customer.firstName}</span>}
 {checkoutModal && 
-(<dialog id="my-dialog" className="checkoutModal">
+(<dialog id="my-dialog" className="checkoutModal" ref={checkoutModalRef}>
 <div className="checkoutModal-content"> 
   <Payment 
   items={cartItems}
