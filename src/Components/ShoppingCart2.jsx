@@ -84,7 +84,9 @@ const ShoppingCart2 = ({onRemoveItem}) => {
           await setCS(clientSecret);
         })
         .then(()=> {
-          checkoutModalRef.current.showModal();
+          setTimeout(() => {
+            checkoutModalRef.current.showModal();
+          }, 3500);
           if(counter ===0){            
             setCheckoutModal(!checkoutModal)
            setCounter(counter+1);
