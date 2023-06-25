@@ -61,7 +61,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
     }
     
     const handleCheckout = async() => {
-      const name = await cartItems.map(item => item.name)
+      // const name = await cartItems.map(item => item.name)
       if(cartItems)   
       var itemAry=  cartItems.map(item => item.name)
       setNames(()=>itemAry); 
@@ -71,7 +71,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
           body: JSON.stringify({
             items: cartItems,
             currency: "usd",
-            description:name.join(','),
+            // description:name.join(','),
             amount: totalPrice,
            //stripeEmail:"cus_JUFRrOX9q3205v",
           stripeEmail:customer.stripeId,
