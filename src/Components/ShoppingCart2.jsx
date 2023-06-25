@@ -23,6 +23,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
     const [isOpen, setIsOpen] = useState(false);
     const [cs, setCS] = useState('');
     const [name,setNames] = useState([]);
+    const [counter,setCounter] = useState(0);
     function calculateTotal(items, {shipping = SHIPPING_DEFAULT=0, discount =0} = {}) {
       //  
       if (items == null || items.length === 0) return 0;
@@ -81,7 +82,14 @@ const ShoppingCart2 = ({onRemoveItem}) => {
           var {clientSecret}  = await result.json();
           await setCS(clientSecret);
         })
-        .then(()=> setCheckoutModal(!checkoutModal))
+        .then(()=> {
+          if(counter ===0){            
+            setCheckoutModal(!checkoutModal)
+           setCounter(counter+1);
+          }
+        
+        })
+          
         .catch(error => console.error(error))
       
 
@@ -92,6 +100,12 @@ const ShoppingCart2 = ({onRemoveItem}) => {
       const detailsModal = document.querySelector('.cart-container');
       detailsModal.removeAttribute('open');
       };
+
+      const closeStripeDialog= () => {
+        // const detailsModal = document.querySelector('.checkoutModal');
+        // detailsModal.removeAttribute('open');
+        setCheckoutModal(!checkoutModal)
+        };
 
 
  return (
@@ -139,7 +153,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
   
   <button id="close-dialog" className="checkoutModal-close red"
   aria-label="Close Payment Box"
-   onClick={handleCheckout}>&times; </button>
+   onClick={closeStripeDialog}>&times; </button>
   </div>
 </dialog>)
 }
