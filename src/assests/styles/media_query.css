@@ -75,15 +75,8 @@ hr {
   display: none;
 }
 
-.login-desktop,.register-desktop {
-  /* display: none; */
-  /* font-size: 90%; */
-  /* padding: 6px; */
-}
 
-.btn-green-login-mobile {
-  /* display: block; */
-}
+
 
 .black-color {
  color: black;
@@ -200,7 +193,8 @@ hr {
 
   #container .main, .product-container{
    grid-template-columns: 1fr;
-   padding:10%; 
+   padding:15%; 
+   border-left: none;
   }
  
   #container .header {
@@ -232,14 +226,20 @@ hr {
     height: auto;
   }
 
-  .btn-green-login, [value="Register"]{
+ [value="Register"]{
     /* display: none; */
     font-size: 135%;
+    color:grey;
+    background-color: white;
     padding:2%;
   }
 
-  .btn-green-login {
-    padding:15%;
+  .btn-green-login-mobile {
+    padding:10%;
+    padding-left: 25%;
+    padding-right: 25%;
+    font-size: 135%;
+    
   }
  
   .header {
@@ -259,6 +259,10 @@ hr {
 }
  
 hr {
+  display: none;
+}
+
+.btn-blue-add {
   display: none;
 }
 

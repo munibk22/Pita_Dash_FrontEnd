@@ -25,6 +25,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
     const [name,setNames] = useState([]);
     const [counter,setCounter] = useState(0);
     const checkoutModalRef = useRef(null);
+    const cartDetailModal = useRef(null);
     function calculateTotal(items, {shipping = SHIPPING_DEFAULT=0, discount =0} = {}) {
       //  
       if (items == null || items.length === 0) return 0;
@@ -41,7 +42,8 @@ const ShoppingCart2 = ({onRemoveItem}) => {
     
     useEffect(()=>{
       setCartItems(storeItems);
-        
+      if(cartDetailModal.current != null)
+      cartDetailModal.current.click();;
     },[storeItems]);
 
     const addItem = (e,productId,qty)=>{
@@ -115,7 +117,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
  return (
   <div> 
     {cartItems.length > 1 ?<>
-<details className='cart-container'>
+<details className='cart-container' ref={cartDetailModal}>
 <summary > <span > 🛒 Shopping Cart Items </span> <span
  className='red font-larger font-bold '>
  {/* {cartItems.reduce((acc,item )=> acc +item.quantity,0)} */}

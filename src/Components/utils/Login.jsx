@@ -69,7 +69,7 @@ try {
  
   return (
    <>
-   <button className='btn-green-login' onClick={toggleLogin}>Login</button>
+   <button className='btn-green-login btn-green-login-mobile' onClick={toggleLogin}>Login</button>
    {/* {showDialog && <div id='loginModal'>
   <form id='loginForm' onSubmit={handleLogin} >
   Enter UserName:

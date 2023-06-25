@@ -39,8 +39,14 @@ async function addToCartHandler(item) {
   setQty(()=> itemQty.quantity+1)
 
   toast.success(`${item.name} was added to cart`,{
-    autoClose: 1500,
-  })
+    autoClose: 1200,
+  });
+
+  // let checkoutModal = document.getElementById('my-dialog');
+  const detailsModal = document.querySelector('.cart-container');
+  // Show the modal
+  detailsModal.style.display = 'block';
+
   // setCartItems(storeItems);
   // dispatch(cartActions.increaseQuantity(id));
   // setTimeout(()=>{
