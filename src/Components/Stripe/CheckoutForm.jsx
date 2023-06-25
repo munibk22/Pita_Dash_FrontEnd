@@ -20,15 +20,15 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle,custome
   const paymentModal = document.getElementById('my-dialog');
 
   useEffect(() => {
-    if (!stripe) {
-      return;
-    }
-    const clientSecret = new URLSearchParams(window.location.search).get(
-      "payment_intent_client_secret"
-    );
-    if (!clientSecret) {
-      return;
-    }
+    // if (!stripe) {
+    //   return;
+    // }
+    // const clientSecret = new URLSearchParams(window.location.search).get(
+    //   "payment_intent_client_secret"
+    // );
+    // if (!clientSecret) {
+    //   return;
+    // }
 
     const mountEmail = ()=>{
       // if(customer.email){
