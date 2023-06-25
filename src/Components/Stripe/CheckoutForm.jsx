@@ -25,51 +25,51 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle,custome
     // Add more dictionary entries as needed
   ];
 
-  useEffect(() => {
-    // if (!stripe) {
-    //   return;
-    // }
-    // const clientSecret = new URLSearchParams(window.location.search).get(
-    //   "payment_intent_client_secret"
-    // );
-    // if (!clientSecret) {
-    //   return;
-    // }
+  // useEffect(() => {
+  //   // if (!stripe) {
+  //   //   return;
+  //   // }
+  //   // const clientSecret = new URLSearchParams(window.location.search).get(
+  //   //   "payment_intent_client_secret"
+  //   // );
+  //   // if (!clientSecret) {
+  //   //   return;
+  //   // }
 
-    const mountEmail = ()=>{
-      // if(customer.email){
-        let emailAddress = customer.email ? customer.email : "youremail@email.com";
-          // Create the Link Authentication Element with the defaultValues option
-      const linkAuthenticationElement = elements.create("linkAuthentication", {defaultValues: {email:emailAddress}});
+  //   const mountEmail = ()=>{
+  //     // if(customer.email){
+  //       let emailAddress = customer.email ? customer.email : "youremail@email.com";
+  //         // Create the Link Authentication Element with the defaultValues option
+  //     const linkAuthenticationElement = elements.create("linkAuthentication", {defaultValues: {email:emailAddress}});
 
-      // Mount the Link Authentication Element to its corresponding DOM node
-      linkAuthenticationElement.mount("#link-authentication-element");
-        console.log(customer.email);
-      // }
-    }
+  //     // Mount the Link Authentication Element to its corresponding DOM node
+  //     linkAuthenticationElement.mount("#link-authentication-element");
+  //       console.log(customer.email);
+  //     // }
+  //   }
 
-    stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
-      switch (paymentIntent.status) {
-        case "succeeded":
-          // setTimeout(test,9000)
-          // setMessage("Payment succeeded!");
-          console.log(paymentIntent.status);
-          break;
-        case "processing":
-          console.log(paymentIntent.status);
-          setMessage("Your payment is processing.");
-          break;
-        case "requires_payment_method":
-          console.log(paymentIntent.status);
-          setMessage("Your payment was not successful, please try again.");
-          break;
-        default:
-          console.log(paymentIntent.status);
-          setMessage("Something went wrong.");
-          break;
-      }
-    }).then(()=>mountEmail());
-  }, [stripe]);
+  //   stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
+  //     switch (paymentIntent.status) {
+  //       case "succeeded":
+  //         // setTimeout(test,9000)
+  //         // setMessage("Payment succeeded!");
+  //         console.log(paymentIntent.status);
+  //         break;
+  //       case "processing":
+  //         console.log(paymentIntent.status);
+  //         setMessage("Your payment is processing.");
+  //         break;
+  //       case "requires_payment_method":
+  //         console.log(paymentIntent.status);
+  //         setMessage("Your payment was not successful, please try again.");
+  //         break;
+  //       default:
+  //         console.log(paymentIntent.status);
+  //         setMessage("Something went wrong.");
+  //         break;
+  //     }
+  //   }).then(()=>mountEmail());
+  // }, [stripe]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -141,10 +141,10 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle,custome
 
   return (
     <form id="payment-form" onSubmit={handleSubmit} className="stripe-form ">
-      <LinkAuthenticationElement
+      {/* <LinkAuthenticationElement
         id="link-authentication-element"
         onChange={(e) => setEmail(customer.email)}      
-           />
+           /> */}
        <h3>Enter Payment Details - Total Amount ${amount}</h3>
       <PaymentElement id="payment-element"  />
       <button disabled={isLoading || !stripe || !elements} id="submit"className="stripe-button">

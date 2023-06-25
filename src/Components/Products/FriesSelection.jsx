@@ -12,7 +12,7 @@ const handleOptionChange = (e) => {
    <li> 
    <label title='Choose Drink'>
    <input type='radio' name='fries-group' value = 'regular' 
-   checked={selectedFries =='regular'} onChange={handleOptionChange} />
+   checked={selectedFries ==='regular'} onChange={handleOptionChange} />
    
   
    {"   "} Regular
