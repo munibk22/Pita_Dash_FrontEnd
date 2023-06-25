@@ -18,6 +18,12 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle,custome
   const [message, setMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const paymentModal = document.getElementById('my-dialog');
+  const icons = [
+    { sizes: '16x16' },
+    { sizes: '32x32' },
+    { sizes: '64x64' },
+    // Add more dictionary entries as needed
+  ];
 
   useEffect(() => {
     // if (!stripe) {

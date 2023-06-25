@@ -15,7 +15,13 @@ function Payment({items,handleCheckout,amount,description,customer,handleToggle,
   // const stripePromise = loadStripe("pk_test_51Ir9CYBbKPDTbStSEP3nWgJPTtqXvsCs52VwZIRi4dN1YV8zpdf54HtpTHCVrE49JGrel5ftRh423Y4kKUiLAqH400uIDCTF79");
 // const items = useSelector(state => state.cart)  
   const [clientSecret, setClientSecret] = useState(cs);
-  console.log(items);
+  // console.log(items);
+  const icons = [
+    { sizes: '16x16' },
+    { sizes: '32x32' },
+    { sizes: '64x64' },
+    // Add more dictionary entries as needed
+  ];
   // useEffect(() => {
     // fetch(url+"payment/config").then(async (r) => {
     //   // const { publishableKey } = await r.json();
