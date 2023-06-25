@@ -69,7 +69,7 @@ function Payment({items,handleCheckout,amount,description,customer,handleToggle,
         // options={{clientSecret, appearance, loader}}
         options={options}
          key={clientSecret}>
-          <Checkout
+          <CheckoutForm
           // handleCheckout={handleCheckout}
           // amount={amount}
           // handleToggle={handleToggle}

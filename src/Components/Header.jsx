@@ -1,5 +1,5 @@
 import React from 'react';
-import Nav from './Nav';
+
 import Login from './utils/Login';
 import Cart from './ShoppingCart2';
 import ShoppingCart2 from './ShoppingCart2';
@@ -29,7 +29,7 @@ const Header = () => {
       </a>
       </div>
     {/* <img alt='circle-logo' src={arrow} className='circle-green'></img> */}
-    <h1><Nav /></h1> 
+    {/* <h1><Nav /></h1>  */}
     <span className="login-desktop"><h6><Login /></h6> </span>
     <span className="register-desktop"><h6><Register /></h6></span> 
     {/* <h6>Shopping Cart </h6>  */}

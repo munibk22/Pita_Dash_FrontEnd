@@ -83,14 +83,14 @@ const ShoppingCart2 = ({onRemoveItem}) => {
           var {clientSecret}  = await result.json();
           await setCS(clientSecret);
         })
-        .then(()=> {
-          setTimeout(() => {
-            checkoutModalRef.current.showModal();
-          }, 3500);
+        .then(()=> {         
           if(counter ===0){            
             setCheckoutModal(!checkoutModal)
            setCounter(counter+1);
           }
+          setTimeout(() => {
+            checkoutModalRef.current.showModal();
+          }, 1500);
         
         })
           

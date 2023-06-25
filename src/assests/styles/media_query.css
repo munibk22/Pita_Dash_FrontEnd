@@ -50,7 +50,7 @@
   display: grid;
   grid-area: header;
   /* grid-template-columns: repeat(4,1fr); */
-  grid-template-columns:  1fr 1fr 2fr;
+  grid-template-columns:  4fr 2fr 2fr 3fr;
   grid-template-rows: 1fr;
   place-content: center;
   grid-gap: 1rem;
@@ -64,16 +64,25 @@
   box-shadow:none;
   background-color:white;
   width: 100%;
+  font-size: 105%;
+}
+
+.header img {
+  width: 6rem;
+}
+
+hr {
+  display: none;
 }
 
 .login-desktop,.register-desktop {
-  display: none;
+  /* display: none; */
   /* font-size: 90%; */
   /* padding: 6px; */
 }
 
 .btn-green-login-mobile {
-  display: block;
+  /* display: block; */
 }
 
 .black-color {
@@ -198,7 +207,7 @@
     display: grid;
     grid-area: header;
     /* grid-template-columns: repeat(4,1fr); */
-    grid-template-columns: 1fr 1fr 2fr;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
     grid-template-rows: 1fr;
     place-content: center;
     grid-gap: 1rem;
@@ -219,8 +228,18 @@
   }
  
   .header img{
-   width: 8rem;
+   width: 4rem;
     height: auto;
+  }
+
+  .btn-green-login, [value="Register"]{
+    /* display: none; */
+    font-size: 135%;
+    padding:2%;
+  }
+
+  .btn-green-login {
+    padding:15%;
   }
  
   .header {
@@ -243,11 +262,7 @@ hr {
   display: none;
 }
 
-.navbar .btn-green-login, .btn-purple {
-  /* display: none; */
-  font-size: 125%;
-  /* padding: 6px; */
-}
+
  
  }
 
