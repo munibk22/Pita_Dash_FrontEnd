@@ -90,10 +90,10 @@ const ShoppingCart2 = ({onRemoveItem}) => {
            
           setTimeout(() => {
             
-           // if(checkoutModalRef.current != null){
+           if(checkoutModalRef.current != null){
               setCheckoutModal(!checkoutModal)
-              // checkoutModalRef.current.showModal();
-           // }
+              checkoutModalRef.current.showModal();
+           }
           }, 2000);
         
         })
