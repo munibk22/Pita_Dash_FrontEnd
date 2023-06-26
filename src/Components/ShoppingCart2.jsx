@@ -85,14 +85,16 @@ const ShoppingCart2 = ({onRemoveItem}) => {
           var {clientSecret}  = await result.json();
           await setCS(clientSecret);
         })
-        .then(()=> {         
-          if(counter ===0){            
-            setCheckoutModal(!checkoutModal)
-           setCounter(counter+1);
-          }
+        .then(()=> {                  
+           // setCheckoutModal(!checkoutModal)
+           
           setTimeout(() => {
-            checkoutModalRef.current.showModal();
-          }, 1500);
+            
+           // if(checkoutModalRef.current != null){
+              setCheckoutModal(!checkoutModal)
+              // checkoutModalRef.current.showModal();
+           // }
+          }, 2000);
         
         })
           

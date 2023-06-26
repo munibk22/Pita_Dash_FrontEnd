@@ -35,7 +35,6 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle,custome
     if (!clientSecret) {
       return;
     }
-
     const mountEmail = ()=>{
       if(customer.email){
         let emailAddress = customer.email ? customer.email : "youremail@email.com";
@@ -47,7 +46,7 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle,custome
         console.log(customer.email);
       }
     }
-
+    mountEmail()
     stripe.retrievePaymentIntent(clientSecret).then(({ paymentIntent }) => {
       switch (paymentIntent.status) {
         case "succeeded":
@@ -141,10 +140,10 @@ export default function CheckoutForm({handleCheckout,amount,handleToggle,custome
 
   return (
     <form id="payment-form" onSubmit={handleSubmit} className="stripe-form ">
-      {/* <LinkAuthenticationElement
+      <LinkAuthenticationElement
         id="link-authentication-element"
         onChange={(e) => setEmail(customer.email)}      
-           /> */}
+           />
        <h3>Enter Payment Details - Total Amount ${amount}</h3>
       <PaymentElement id="payment-element"  />
       <button disabled={isLoading || !stripe || !elements} id="submit"className="stripe-button">

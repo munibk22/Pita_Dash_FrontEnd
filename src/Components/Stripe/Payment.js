@@ -70,11 +70,11 @@ function Payment({items,handleCheckout,amount,description,customer,handleToggle,
         options={options}
          key={clientSecret}>
           <CheckoutForm
-          // handleCheckout={handleCheckout}
-          // amount={amount}
-          // handleToggle={handleToggle}
-          // customer={customer}
-          // options={options}
+          handleCheckout={handleCheckout}
+          amount={amount}
+          handleToggle={handleToggle}
+          customer={customer}
+          options={options}
           />
         </Elements>
       )}
