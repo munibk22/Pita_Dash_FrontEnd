@@ -33,6 +33,11 @@
     padding: 4%;
     font-size: 1rem;
    }
+
+   
+  .cart-summary {
+    margin-top: 1rem;
+  }
   
 }
 
@@ -187,6 +192,11 @@ hr {
   padding: 3%;
 }
 
+
+.cart-summary {
+  margin-top: 1rem;
+}
+
 }
 
 @media (width <= 575px){
@@ -280,6 +290,9 @@ hr {
   display: none;
 }
 
+.cart-summary {
+  margin-top: 1rem;
+}
 
  
  }
