@@ -43,8 +43,10 @@ async function addToCartHandler(item) {
   });
 
   // let checkoutModal = document.getElementById('my-dialog');
-     const cartContainer= document.querySelector('.cart-container');
-     cartContainer.setAttribute("open", "");
+    setTimeout(() => {
+      const cartContainer= document.querySelector('.cart-container');
+      cartContainer.setAttribute("open", "");
+    }, 500);
   // // Show the modal
   // detailsModal.style.display = 'block';
 
