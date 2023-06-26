@@ -191,7 +191,7 @@ hr {
 
 @media (width <= 575px){
 
-  #container .main, .product-container{
+    #container .main, .product-container{
    grid-template-columns: 1fr;
    padding:15%; 
    border-left: none;
@@ -219,6 +219,15 @@ hr {
   .product-style {
    max-width: 285px;
    gap: .5rem;
+  }
+
+  .checkoutModal {
+    min-width: 410spx;
+  }
+
+  .stripe-form {
+    min-width: 390px;
+    padding:0%;
   }
  
   .header img{
