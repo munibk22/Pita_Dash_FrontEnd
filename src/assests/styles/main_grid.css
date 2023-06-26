@@ -30,7 +30,8 @@ place-items:center;
  /* font-size: 1.5rem; */
  padding:1%;
  z-index: 2;
- width:100%
+ width:100%;
+ max-width: 1500px;
 }
 
 #container .main{
@@ -97,6 +98,7 @@ place-items:center;
  justify-content: center;
  align-items: center;
  place-items:center;
+ min-height: calc(100% - .4rem);
 }
 
 .checkoutModal-content {
@@ -109,6 +111,11 @@ place-items:center;
  width: 100%;
  /* height: 100%; */
  justify-content: center;
+ max-width: 468px;
+}
+
+#payment-form {
+ max-width: 468px;
 }
 
 .checkoutModal-close {

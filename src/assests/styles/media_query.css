@@ -227,6 +227,7 @@ hr {
   .checkoutModal {
     /* min-width: 410px; */
     min-width: 100% !important;
+    font-size: 92%;
   }
 
   .stripe-form {
