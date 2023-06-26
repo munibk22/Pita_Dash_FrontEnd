@@ -86,15 +86,14 @@ const ShoppingCart2 = ({onRemoveItem}) => {
           await setCS(clientSecret);
         })
         .then(()=> {                  
-           // setCheckoutModal(!checkoutModal)
+           setCheckoutModal(!checkoutModal)
            
-          setTimeout(() => {
-            
+          setTimeout(() => {            
            if(checkoutModalRef.current != null){
-              setCheckoutModal(!checkoutModal)
+              // setCheckoutModal(!checkoutModal)
               checkoutModalRef.current.showModal();
            }
-          }, 2000);
+          }, 2500);
         
         })
           
