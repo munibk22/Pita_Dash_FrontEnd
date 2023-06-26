@@ -93,7 +93,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
               // setCheckoutModal(!checkoutModal)
               checkoutModalRef.current.showModal();
            }
-          }, 1500);
+          }, 800);
         
         })
           
