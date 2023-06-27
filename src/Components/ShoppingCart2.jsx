@@ -1,9 +1,10 @@
 import React from 'react';
 import { useState,useEffect,useRef } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
 import Payment from './Stripe/Payment'
 import CheckoutForm from './Stripe/CheckoutForm';
 import {url} from './utils/AjaxCalls'
+import {removeItem} from '../Components/Redux/cartSlice'
 
 const ShoppingCart2 = ({onRemoveItem}) => {
   const storeItems = useSelector(state => state.cart.items);
@@ -26,6 +27,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
     const [counter,setCounter] = useState(0);
     const checkoutModalRef = useRef(null);
     const cartDetailModal = useRef(null);
+    const dispatch = useDispatch();
     function calculateTotal(items, {shipping = SHIPPING_DEFAULT=0, discount =0} = {}) {
       //  
       if (items == null || items.length === 0) return 0;
@@ -59,7 +61,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
       setItems(...items,e.target.value);
     };
 
-    const removeItem = e=> {
+    const removeItemHandler = e=> {
       const updatedList = items.filter(item => item.id != e.target.value);
       setItems(updatedList);
     }
@@ -114,6 +116,15 @@ const ShoppingCart2 = ({onRemoveItem}) => {
         setCheckoutModal(!checkoutModal)
         };
 
+        const handleRemoveItem= (product) =>{
+          console.log(product);
+          // e.preventDefault();
+          console.log('removed objest clicked');
+          dispatch(removeItem(product));
+          const updatedList = cartItems.filter(item => item.id != product.id);
+          setCartItems(()=>[...updatedList]);
+        };
+
 
  return (
   <div> 
@@ -132,7 +143,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
            return (          
               <li key={item.id}>
               {item.name} - ${item.price} &nbsp;&nbsp;&nbsp;
-              <button className='btn-red-cart' onClick={() => onRemoveItem(item)}>Remove</button>
+              <button className='btn-red-cart' onClick={()=>handleRemoveItem(item)}>Remove</button>
             </li>
           )})}
         <div>

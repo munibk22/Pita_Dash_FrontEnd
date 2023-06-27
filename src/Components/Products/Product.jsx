@@ -9,7 +9,7 @@ const Product = (props) => {
   // const {id,title,image,description,price} = "props";
   const {id,name,image,description,price,storeItems,product,cartItems} = props;
   // console.log(cartItems);
-  console.log(props);
+  // console.log(props);
 const [mealPrice,setMealPrice] = useState(+product.price.raw+3);
 const [shwarmaMeal,setShwarmaMeal] = useState(false);
 const dispatch = useDispatch();
@@ -36,7 +36,7 @@ async function addToCartHandler(item) {
   if(itemQty == null)
   setQty(()=> (1)); 
   else
-  setQty(()=> itemQty.quantity+1)
+  setQty(()=> itemQty.quantity+1);
 
   toast.success(`${item.name} was added to cart`,{
     autoClose: 1200,
