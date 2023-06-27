@@ -117,12 +117,11 @@ const ShoppingCart2 = ({onRemoveItem}) => {
         };
 
         const handleRemoveItem= (product) =>{
-          console.log(product);
           // e.preventDefault();
-          console.log('removed objest clicked');
+          console.log('removed objest clicked' + product);
           dispatch(removeItem(product));
           const updatedList = cartItems.filter(item => item.id != product.id);
-          setCartItems(()=>[...updatedList]);
+          setCartItems(()=>updatedList);
         };
 
 

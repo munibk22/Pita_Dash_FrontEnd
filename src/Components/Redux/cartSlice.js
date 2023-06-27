@@ -35,6 +35,7 @@ export const cartSlice = createSlice({
 
    const itemToRemoveId = action.payload;
    const existingItem = state.items.filter(item => item.id === itemToRemoveId.id)
+   const itemPrice = itemToRemoveId.price.raw ? itemToRemoveId.price.raw : itemToRemoveId.price;
 
    if (existingItem.quantity === 1) {
     state.items = state.items.filter(item => item.id !== itemToRemoveId.id);
@@ -43,7 +44,7 @@ export const cartSlice = createSlice({
   }
   if (state.totalQuantity  > 0){
     state.totalQuantity = state.totalQuantity-1;
-    state.totalPrice = state.totalPrice - itemToRemoveId.price.raw;
+    state.totalPrice = state.totalPrice - itemPrice;
   }
   },
   clearCart: (state)=> {
