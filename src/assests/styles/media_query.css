@@ -294,7 +294,9 @@ hr {
   margin-top: 1rem;
 }
 
- 
+ .Toastify__toast {
+  width: 65%;
+ }
  }
 
  
