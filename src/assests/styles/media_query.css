@@ -321,6 +321,9 @@ hr.left-border {
   justify-content: center;
  }
 
+ .card-text, .card-body {
+  width: 80%;
+ }
  }
 
  
