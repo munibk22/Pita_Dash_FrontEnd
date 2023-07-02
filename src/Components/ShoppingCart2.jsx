@@ -146,8 +146,9 @@ const ShoppingCart2 = ({onRemoveItem}) => {
             </li>
           )})}
         <div>
-      <p>Total Quantity: {totalQuantity}</p>
-      <p>Total Price: ${totalPrice.toFixed(2)}</p>
+      <hr className="margin-top-10" />
+      <p className="margin-top-5">Total Quantity: {totalQuantity}</p>
+      <p>Total Price: $<span className="text-green">{totalPrice.toFixed(2)}</span></p>
         <button className='btn-blue margin-top-10' onClick={handleCheckout}>Checkout</button>
     </div>
     <button className="close-button2" aria-label="Close Details Box" onClick={handleToggle}>&times;</button>
