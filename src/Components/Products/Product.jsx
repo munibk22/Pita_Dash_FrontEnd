@@ -130,7 +130,7 @@ console.log(e.target.value=='sandwhich-only' );
 <span><strong>${mealPrice}</strong></span>
 
 {shwarmaMeal && <div className='submenu'>
-<span>  <DrinkSelection /></span> <span> <FriesSelection /></span> 
+<span>  <DrinkSelection key={product.id}/></span> <span> <FriesSelection key={product.id}/></span> 
 </div>   }
 
     </form> 

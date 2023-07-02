@@ -121,7 +121,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
           console.log('removed objest clicked' + product);
           dispatch(removeItem(product));
           const updatedList = cartItems.filter(item => item.id != product.id);
-          setCartItems(()=>updatedList);
+          setCartItems(()=>[...updatedList]);
         };
 
 
@@ -159,6 +159,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
 (<dialog id="my-dialog" className="checkoutModal" ref={checkoutModalRef}>
 <div className="checkoutModal-content"> 
   <Payment 
+  key={name}
   items={cartItems}
   description={name}
   amount={totalPrice}
