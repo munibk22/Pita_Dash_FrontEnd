@@ -114,7 +114,7 @@ console.log(e.target.value=='sandwhich-only' );
    <img src= {product.image.url} alt="Image" 
    className="card-img drop-shadow4" 
    width='250px' height='220px' />  
-   <form className="card-text meal-selection  width-100">
+   <form className="card-text meal-selection ">
    
 <label title= {product.title + ' Only'}>
     <input onChange={e=>handleSingleSelections(e,{description})}
@@ -135,7 +135,7 @@ console.log(e.target.value=='sandwhich-only' );
 
     </form> 
     {/* id,name,image,description,price */}
-   <div className="card-body width-90 ">     
+   <div className="card-body ">     
     <span className=" add-to-cart">
      <button className="btn-red-remove" onClick={() => removeItemHandler(product)}>-</button>
      <button className="cart-btn btn-green-login" onClick={() => addToCartHandler(product)}>Add To Cart</button>

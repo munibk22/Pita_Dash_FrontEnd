@@ -226,6 +226,7 @@ hr.left-border {
     box-shadow: 1px -1px 8px 2px rgba(0, 0, 0, 0.2);
     place-items:center;
     padding: 3%; 
+    min-width: fit-content;
   }
  
   #container .header {
