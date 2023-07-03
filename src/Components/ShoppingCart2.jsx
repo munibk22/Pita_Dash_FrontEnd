@@ -5,6 +5,7 @@ import Payment from './Stripe/Payment'
 import CheckoutForm from './Stripe/CheckoutForm';
 import {url} from './utils/AjaxCalls'
 import {removeItem} from '../Components/Redux/cartSlice'
+import Login from './utils/Login';
 
 const ShoppingCart2 = ({onRemoveItem}) => {
   const storeItems = useSelector(state => state.cart.items);
@@ -28,6 +29,7 @@ const ShoppingCart2 = ({onRemoveItem}) => {
     const checkoutModalRef = useRef(null);
     const cartDetailModal = useRef(null);
     const dispatch = useDispatch();
+    const openModal = useRef(null);
     function calculateTotal(items, {shipping = SHIPPING_DEFAULT=0, discount =0} = {}) {
       //  
       if (items == null || items.length === 0) return 0;
@@ -71,6 +73,8 @@ const ShoppingCart2 = ({onRemoveItem}) => {
       if(cartItems)   
       var itemAry=  cartItems.map(item => item.name)
       setNames(()=>itemAry); 
+
+      if(customer.stripeId != ""){
       fetch(url+"payment/create-payment-intent", {
         headers:{'Content-Type':'application/json'},
           method: "POST",
@@ -88,18 +92,26 @@ const ShoppingCart2 = ({onRemoveItem}) => {
           await setCS(clientSecret);
         })
         .then(()=> {                  
-           setCheckoutModal(!checkoutModal)
-           
+           setCheckoutModal(!checkoutModal)           
           setTimeout(() => {            
            if(checkoutModalRef.current != null){
               // setCheckoutModal(!checkoutModal)
               checkoutModalRef.current.showModal();
            }
-          }, 800);
-        
-        })
-          
-        .catch(error => console.error(error))
+          }, 800);        
+        })  
+        .catch(error => console.error(error));
+      } else {
+        const loginButton = document.querySelector('.login-button');
+        loginButton.click();
+
+        // <Login openModal={openModal}/>
+        // <Login isToggled={isToggled} toggleFunction={toggleFunction}/>
+      }
+
+      function openModal (){
+        // toggleLogin();
+      }
       
 
 

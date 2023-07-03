@@ -16,6 +16,7 @@ const modalRef = useRef(null);
 const dialog = document.querySelector("dialog")
 const dispatch = useDispatch();
 
+
 const toggleLogin = (e) => {
 e.preventDefault();
 console.log('click login');
@@ -25,7 +26,7 @@ modalRef.current.showModal(); //Open Modal
 
 const handleClose = (e)=>{
 e.preventDefault();
-console.log('clicked close');
+console.log('Login Modal clicked close');
 modalRef.current.close();  //Close Modal
 }
 
@@ -66,10 +67,18 @@ try {
   modalRef.current.close();
 }
  };
+
+function toggleRegister(e) {
+  e.preventDefault();
+  console.log("Clicked to Register");
+  handleClose(e);
+  const registerModalButton = document.querySelector('.register-button');
+  registerModalButton.click();
+}
  
   return (
    <>
-   <button className='btn-green-login btn-green-login-mobile' onClick={toggleLogin}>Login</button>
+   <button className='btn-green-login btn-green-login-mobile login-button' onClick={toggleLogin}>Login</button>
    {/* {showDialog && <div id='loginModal'>
   <form id='loginForm' onSubmit={handleLogin} >
   Enter UserName:
@@ -96,6 +105,10 @@ try {
         </li>
         <li><button type="submit" className='btn-blue'>Submit</button></li>
         <li><button type="button" className='btn-red' onClick={handleClose}>Close</button></li>
+    <hr></hr>
+    <section className="toggle-register">Need to Register?
+      <p><button onClick={(e)=>toggleRegister(e)}>Click here</button></p>
+    </section>
       </ul>
     </form>
    </dialog>

@@ -152,7 +152,7 @@ dialog::backdrop {
   z-index: 10;
   display: grid; 
   grid-gap:1rem;
-  justify-content: start;
+  justify-content: center;
   position: fixed;
   /* left: 0; */
   left: 50%;
@@ -174,7 +174,6 @@ dialog::backdrop {
   grid-template-rows: .2fr 1.2fr .2fr .2fr;
  }
 
-
  .login-form, .register-form {
   display: grid;
   align-items: center;
@@ -187,6 +186,12 @@ dialog::backdrop {
  .login-form {
   max-height:80%;
  }
+ 
+ .login-form .toggle-register {
+  justify-items: center;
+  text-align: center;
+ }
+
  /* Modal content */
  .modal-content {
   background-color: #fefefe;

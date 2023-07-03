@@ -61,9 +61,10 @@ try {
 
   return (
    <> 
-   <input type='button' value='Register' 
-   className="btn-purple" onClick={handleRegisterModal} /> 
-    <dialog className="register-container" id='register-modal' ref={modalRef}>
+   <input type='button' value="Register" 
+   className="btn-purple register-button" onClick={handleRegisterModal} /> 
+    <dialog className="register-container" id='register-modal' 
+    ref={modalRef} >
      
     <form method='dialog'  className='register-modal'
     onSubmit={handleSubmit}>
