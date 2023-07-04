@@ -10,7 +10,7 @@ grid-template-columns: 1fr;
 grid-template-rows: .4fr 1r 8fr 1fr;
 padding:1rem;
 place-items:center;
- grid-gap:1rem;
+ grid-gap:1.2rem;
 }
 
 
@@ -47,7 +47,7 @@ place-items:center;
 
 #container .banner-one{
  width: 55rem;
- aspect-ratio: 6/ 1.5;
+ aspect-ratio: 6/ 1.2;
 }
 
 #container .banner-one{
