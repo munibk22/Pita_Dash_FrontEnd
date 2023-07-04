@@ -283,12 +283,18 @@ hr.left-border {
     padding:2%;
   }
 
-  .btn-green-login-mobile,.btn-blue-cart {
+  .btn-green-login-mobile {
     padding:10%;
     padding-left: 25%;
     padding-right: 25%;
-    font-size: 135%;
-    
+    font-size: 135%;    
+  }
+
+  .btn-blue-cart {
+    padding:6%;
+    padding-left: 25%;
+    padding-right: 25%;
+    border-radius: 1rem;
   }
  
   .header {
@@ -325,7 +331,7 @@ hr.left-border {
 
  .add-to-cart {
   grid-template-columns: .6fr 1fr .4fr;
-  justify-content: center;
+  /* justify-content: center; */
   justify-items:center;
  }
 
