@@ -283,7 +283,7 @@ hr.left-border {
     padding:2%;
   }
 
-  .btn-green-login-mobile {
+  .btn-green-login-mobile,.btn-blue-cart {
     padding:10%;
     padding-left: 25%;
     padding-right: 25%;
@@ -326,6 +326,7 @@ hr.left-border {
  .add-to-cart {
   grid-template-columns: .6fr 1fr .4fr;
   justify-content: center;
+  justify-items:center;
  }
 
  .card-text, .card-body {

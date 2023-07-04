@@ -138,7 +138,7 @@ console.log(e.target.value=='sandwhich-only' );
    <div className="card-body ">     
     <span className=" add-to-cart">
      <button className="btn-red-remove" onClick={() => removeItemHandler(product)}>-</button>
-     <button className="cart-btn btn-green-login" onClick={() => addToCartHandler(product)}>Add To Cart</button>
+     <button className="cart-btn btn-blue-cart" onClick={() => addToCartHandler(product)}>Add To Cart</button>
      <input readOnly placeholder='0' value={qty}
       type="text" className="width-55 font-medium" />
      <button className="btn-blue-add" onClick={() => addToCartHandler(product)}>+</button>

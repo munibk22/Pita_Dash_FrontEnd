@@ -20,6 +20,7 @@ align-items:baseline;
  max-width:385px;
  grid-gap: 1.5rem;
  min-height: 550px;
+ justify-items: center;
 }
 
 .card-container img {
@@ -39,7 +40,7 @@ align-items:baseline;
  grid-template-columns: .6fr 1fr .4fr .8fr;
  grid-gap: .3rem;
  /* place-content:center; */
- /* justify-items:center; */
+ justify-items:center;
 }
 
 .meal-selection {
@@ -72,4 +73,6 @@ align-items:baseline;
   width: 85%;
  }
 
- 
+ .card-title {
+  text-align: center;
+ }
