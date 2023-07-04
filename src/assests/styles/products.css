@@ -47,17 +47,17 @@ align-items:baseline;
  grid-gap: 1rem;
  grid-template-columns: 2fr .5fr;
  /* grid-template-rows: 1fr 1fr; */
- width: 80%;
+ /* width: 80%; */
 }
 
 .drink-selection{
  display:grid;
  grid-gap:.8rem;
  /* width: 8rem; */
- };
+ }
 
- .card-body {
-  width: 80%;
+ .card-text {
+  width: 74%;
  }
 
  /* .submenu {
@@ -69,5 +69,7 @@ align-items:baseline;
  }; */
 
  .card-body {
-  width: 92%;
+  width: 85%;
  }
+
+ 

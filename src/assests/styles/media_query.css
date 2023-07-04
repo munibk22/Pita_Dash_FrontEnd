@@ -208,6 +208,11 @@ hr.left-border {
   margin-top: 1rem;
 }
 
+#container .banner-one{
+  width: 35rem;
+  aspect-ratio: 6/ 1.2;
+ }
+
 }
 
 @media (width <= 595px){
@@ -326,6 +331,12 @@ hr.left-border {
  .card-text, .card-body {
   width: 80%;
  }
+
+ #container .banner-one{
+  width: 25rem;
+  aspect-ratio: 6/ 1.2;
+ }
+
  }
 
  
