@@ -46,9 +46,15 @@ place-items:center;
 }
 
 #container .banner-one{
- width: 55rem;
+ width: 25rem;
  aspect-ratio: 6/ 1;
 }
+
+#container .banner-one{
+ display:flex;
+ justify-content:center;
+}
+
 #container .nav2{
  display: grid;
  grid-area:nav; 
