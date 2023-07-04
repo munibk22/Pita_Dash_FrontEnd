@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {Products,Header,ShoppingCart2} from './Components/ComponentIndex';
+import {Products,Header,Footer,Nav} from './Components/ComponentIndex';
 import {commerceService} from './lib/commerce.js';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -61,9 +61,11 @@ setProducts(data);
   return(
  <div id="container">
  <Header items={cartItems} onRemove={handleRemoveItem} removeItem={removeItem}/>
+ <section className='nav' data-aos="fade-right"><Nav /></section>
  <Products products={products}  items={cartItems} onRemove={handleRemoveItem}
   removeItem={removeItem}/>
   <ToastContainer />
+  <div className=''> <Footer /></div>
  </div>
   );
 }

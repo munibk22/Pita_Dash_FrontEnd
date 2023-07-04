@@ -7,7 +7,7 @@ grid-template-areas:
  'footer';
 /* width:80%; */
 grid-template-columns: 1fr;
-grid-template-rows: .2fr .3fr 10fr 1fr;
+grid-template-rows: .4fr 1r 8fr 1fr;
 padding:1rem;
 place-items:center;
  grid-gap:1rem;
@@ -45,7 +45,11 @@ place-items:center;
  padding:1%;
 }
 
-#container .nav{
+#container .banner-one{
+ width: 55rem;
+ aspect-ratio: 6/ 1;
+}
+#container .nav2{
  display: grid;
  grid-area:nav; 
  place-content: center;

@@ -1,5 +1,7 @@
 import Products from './Products/Products';
 import Header from './Header';
+import Nav from './Nav';
+import Footer from './Footer';
 import ShoppingCart2 from '../Components/ShoppingCart2';
 import '../assests/styles/app.css'
 import '../assests/styles/main_grid.css'
@@ -18,4 +20,4 @@ const ComponentIndex = () => {
   )
 }
 
-export  {ComponentIndex, Products,Header,ShoppingCart2}
+export  {ComponentIndex, Products,Header,Nav,Footer}

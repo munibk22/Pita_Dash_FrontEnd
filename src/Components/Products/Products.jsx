@@ -37,7 +37,7 @@ const Products = (props) =>{
 
 
  return(
-  <div className='product-container' data-aos="fade-down" data-aos-offset="0">
+  <div className='product-container' data-aos="fade-down" data-aos-offset="0" data-aos-anchor-placement="top-bottom">
 {products && products.map(product =>
    <Product 
    key={product.id}
