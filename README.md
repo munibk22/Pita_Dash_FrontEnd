@@ -1,5 +1,7 @@
 -Food delivery service -- https://pitadash.com/
 - React on the front end Spring Boot on the back end
+- Login and validation handled by Spring Security and JWT tokens
+- Payments with integrated stripe API
 
 ![image](https://github.com/munibk22/Pita_Dash_FrontEnd/assets/77594597/9ad94830-e3ab-476b-913d-38631d1a6009)
 
