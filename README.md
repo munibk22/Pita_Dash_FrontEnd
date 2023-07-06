@@ -12,3 +12,8 @@
 
 ![image](https://github.com/munibk22/Pita_Dash_FrontEnd/assets/77594597/7ff7fe2c-7d44-4167-b320-b85fb8df36ed)
 
+- drop down shopping cart
+
+  ![image](https://github.com/munibk22/Pita_Dash_FrontEnd/assets/77594597/7543fb88-2b89-4b10-ac3e-d2ed5dfeb438)
+
+
