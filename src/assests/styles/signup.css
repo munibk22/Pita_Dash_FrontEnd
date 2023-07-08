@@ -264,3 +264,31 @@ dialog::backdrop {
 .close-button2:hover {
   color: #000;
 }
+
+.custom-animation-out,#login-modal,#register-modal {
+  opacity: 1;
+  animation: fade-out 500ms ease-in-out forwards;
+}
+
+.custom-animation-in,#login-modal,#register-modal {
+  opacity: 0;
+  animation: fade-in 600ms ease-in-out forwards;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
