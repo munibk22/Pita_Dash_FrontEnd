@@ -265,12 +265,12 @@ dialog::backdrop {
   color: #000;
 }
 
-.custom-animation-out,#login-modal,#register-modal {
+.custom-animation-out,#login-modal,#register-modal,.cart-container,.cart-summary {
   opacity: 1;
   animation: fade-out 500ms ease-in-out forwards;
 }
 
-.custom-animation-in,#login-modal,#register-modal {
+.custom-animation-in,#login-modal,#register-modal,.cart-container,.cart-summary {
   opacity: 0;
   animation: fade-in 600ms ease-in-out forwards;
 }
