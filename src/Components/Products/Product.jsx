@@ -4,7 +4,8 @@ import FriesSelection from './FriesSelection';
 import { useDispatch,useSelector} from 'react-redux';
 import { addItem,removeItem,getItem } from '../Redux/cartSlice';
 import {toast} from 'react-toastify';
-import Lavi_Hair_Serum_Short from '../../assests/pics/Lavi_Hair_Serum_Short.png'
+import Lavi_Hair_Serum_Short from '../../assests/pics/Lavi_Hair_Serum_Short.png';
+import { FcInfo } from 'react-icons/fc';
 
 const Product = (props) => {
   // const {id,title,image,description,price} = "props";
@@ -115,7 +116,7 @@ if(product.name == 'Advert'){
   <img src= {product.image.url} alt="Image" 
   className="card-img drop-shadow4 hair_serum_img" 
   width='250px' height='220px'/> 
-  <div className="tooltip">Learn More<span className="tooltiptext">Ingredients:
+  <div className="tooltip"><FcInfo /> Learn More<span className="tooltiptext">Ingredients:
   ORGANIC Olive Oil
   ORGANIC Cold Pressed Coconut Oil
   ORGANIC Pumpkin Seed Oil
