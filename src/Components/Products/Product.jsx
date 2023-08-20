@@ -108,7 +108,11 @@ console.log(e.target.value=='sandwhich-only' );
 });
 
 // console.log(product);
-  return (   
+if(product.name == 'Advert'){
+  return <div key={product.id} className='advert'> <img src={product.image.url} alt="hair serum" className='hair_serum'/> </div> 
+}
+else
+  return (  
  <section key={product.id} className="card-container ">
    <h2 className="card-title drop-shadow4">{product.name}</h2>
    <img src= {product.image.url} alt="Image" 

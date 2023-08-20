@@ -3,15 +3,28 @@
  grid-area: main;
  display: grid;
  grid-template-columns: repeat(2,1fr);
+ /* grid-template-rows: 1fr .5fr 1fr; */
+ grid-auto-rows: .6fr;
  width:100%;
  gap:1rem;
  place-items:center;
-align-items:baseline;
+/* align-items:baseline; */
  max-width:900px;
  border-left: 1px solid #d0cccc;
 }
 
+
+.advert {
+  display:flex;
+  justify-content: space-around;
+  grid-column-start:1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end:3;
+}
+
 .card-container {
+/* grid-area: card-container; */
  display:grid;
  grid-template-rows: .3fr .8fr .2fr .5fr;
  /* place-items: center; */

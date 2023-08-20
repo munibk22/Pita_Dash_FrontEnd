@@ -1,4 +1,4 @@
-@media (min-width: 1300px){
+@media (width >= 1300px){
 
   #container .main{
   
@@ -24,6 +24,13 @@
     gap:1.5rem;
     max-width:1275px;
    }
+
+   .advert { 
+    grid-column-start:1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end:3;
+  }
  
  }
 
@@ -49,10 +56,37 @@
   .logo {
     height: 25px;
   }
+  /* .product-container {
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr .5fr 1fr 1fr;
+   }
+
+   .advert { 
+    grid-column-start:1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end:3;
+  } */
+
+  .hair_serum {
+    object-fit: contain;
+    width: 95vw;
+   }
   
 }
 
 @media (max-width:768px){
+  /* .product-container {
+    grid-template-columns: repeat(2,1fr);
+   }
+   .advert { 
+    grid-column-start:1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end:3;
+  } */
+  
+
  body {
   background-color: rgb(255, 255, 255);
 }
@@ -215,7 +249,7 @@ hr.left-border {
 
 }
 
-@media (width <= 595px){
+@media (width <= 767px){
 
   #container {
     width: 100vw;
@@ -223,6 +257,13 @@ hr.left-border {
     #container .main, .product-container{
    grid-template-columns: 1fr;   
    border-left: none;  
+  }
+   
+   .advert { 
+    grid-column-start:1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end:3;
   }
 
   .card-container {
@@ -359,6 +400,10 @@ hr.left-border {
     object-fit: cover;
     padding: 3%;
 }
+.hair_serum {
+  object-fit: contain;
+  width: 100vw;
+ }
 }
 
 
