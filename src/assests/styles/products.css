@@ -112,7 +112,8 @@
 } */
 
 .tooltiptext {
-  visibility: hidden;
+  /* visibility: hidden; */
+  visibility: visible;
   width: 120px;
   background-color: #000;
   color: #fff;
@@ -128,7 +129,7 @@
   transition: opacity 0.3s;
 }
 
-.hair_serum_img:hover .tooltiptext {
+.tooltip:hover .tooltiptext {
   width: 30vw;
   visibility: visible;
   opacity: 1;

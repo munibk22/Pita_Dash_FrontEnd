@@ -115,7 +115,7 @@ if(product.name == 'Advert'){
   <img src= {product.image.url} alt="Image" 
   className="card-img drop-shadow4 hair_serum_img" 
   width='250px' height='220px'/> 
-  <div className="tooltip"><span className="tooltiptext">Ingredients:
+  <div className="tooltip">Learn More<span className="tooltiptext">Ingredients:
   ORGANIC Olive Oil
   ORGANIC Cold Pressed Coconut Oil
   ORGANIC Pumpkin Seed Oil
