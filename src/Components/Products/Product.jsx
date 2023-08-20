@@ -102,16 +102,64 @@ console.log(e.target.value=='sandwhich-only' );
 
 // console.log(product);
 if(product.name == 'Advert'){
-  return <div key={product.id} className='advert'>
+  return <a key={product.id} className='advert' href="#hair_serum">
     <picture>
     <source srcset={product.image.url} media="(min-width: 768px)"></source>
   <source srcset={Lavi_Hair_Serum_Short} alt="hair serum" className='hair_serum' media="(max-width: 500px)" />
   <img src={product.image.url} alt="hair serum" className='hair_serum'/> 
   </picture> 
-   </div> 
+   </a> 
+}else if(product.name === 'Lavi Hair Serum') {
+  return <section key={product.id} id='hair_serum' className="card-container hair_serum_img">
+  <h2 className="card-title drop-shadow4 hair_serum_img">{product.name}</h2>
+  <img src= {product.image.url} alt="Image" 
+  className="card-img drop-shadow4 hair_serum_img" 
+  width='250px' height='220px'/> 
+  <div className="tooltip"><span className="tooltiptext">Ingredients:
+  ORGANIC Olive Oil
+  ORGANIC Cold Pressed Coconut Oil
+  ORGANIC Pumpkin Seed Oil
+  ORGANIC Rosemary Extract 
+  ORGANIC He Shou Wu Extract
+  ORGANIC Milk Thistle Extract 
+  ORGANIC Pygeum Africanum  
+  ORGANIC Horsetail Extract
+  ORGANIC Amla Berry
+  ORGANIC Lemon Balm Extract 
+  ORGANIC Saw Palmetto
+  ORGANIC Neem
+  ORGANIC Stinging Nettle Leaf
+  ORGANIC Clove Buds
+  ORGANIC Peppermint Essential Oil
+  ORGANIC Turmeric Root 
+  ORGANIC Green Tea Extract
+  DISTILLED Water</span></div>
+  <form className="card-text meal-selection ">
+  
+<label title= {product.title + ' Only'}>
+   <input onChange={e=>handleSingleSelections(e,{description})}
+   type="radio" name="meal-selection-group" value="sandwhich-only" />  
+   {"   "}{product.title} 1 Bottle - 
+</label>
+<span><strong>${product.price.raw}</strong></span>
+
+{/* <span><strong>${mealPrice}</strong></span> */}
+   </form> 
+   {/* id,name,image,description,price */}
+  <div className="card-body ">     
+   <span className=" add-to-cart">
+    <button className="btn-red-remove" onClick={() => removeItemHandler(product)}>-</button>
+    <button className="cart-btn btn-blue-cart" onClick={() => addToCartHandler(product)}>Add To Cart</button>
+    <input readOnly placeholder='0' value={qty}
+     type="text" className="width-55 font-medium text-center" />
+    <button className="btn-blue-add" onClick={() => addToCartHandler(product)}>+</button>
+    </span> 
+  
+  </div>
+</section>
 }
 else
-  return (  
+  return (     
  <section key={product.id} className="card-container ">
    <h2 className="card-title drop-shadow4">{product.name}</h2>
    <img src= {product.image.url} alt="Image" 
