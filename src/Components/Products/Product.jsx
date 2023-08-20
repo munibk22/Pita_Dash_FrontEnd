@@ -4,6 +4,7 @@ import FriesSelection from './FriesSelection';
 import { useDispatch,useSelector} from 'react-redux';
 import { addItem,removeItem,getItem } from '../Redux/cartSlice';
 import {toast} from 'react-toastify';
+import Lavi_Hair_Serum_Short from '../../assests/pics/Lavi_Hair_Serum_Short.png'
 
 const Product = (props) => {
   // const {id,title,image,description,price} = "props";
@@ -18,15 +19,7 @@ const totalQuantity = useSelector(state => state.cart.totalQuantity);
     
     // const [cartItems,setCartItems] = useState([]);
     const [qty,setQty] = useState(0);
-    
-// useEffect(() => {
-//   console.log(id);
-  
-  // console.log(itemQty);
 
-    
-  // console.log(itemQty?.quantity);
-// }, [cartItems])
 
 async function addToCartHandler(item) {
   console.log(item);
@@ -109,7 +102,13 @@ console.log(e.target.value=='sandwhich-only' );
 
 // console.log(product);
 if(product.name == 'Advert'){
-  return <div key={product.id} className='advert'> <img src={product.image.url} alt="hair serum" className='hair_serum'/> </div> 
+  return <div key={product.id} className='advert'>
+    <picture>
+    <source srcset={product.image.url} media="(min-width: 768px)"></source>
+  <source srcset={Lavi_Hair_Serum_Short} alt="hair serum" className='hair_serum' media="(max-width: 500px)" />
+  <img src={product.image.url} alt="hair serum" className='hair_serum'/> 
+  </picture> 
+   </div> 
 }
 else
   return (  
