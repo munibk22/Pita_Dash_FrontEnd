@@ -110,7 +110,7 @@ if(product.name == 'Advert'){
   </picture> 
    </a> 
 }else if(product.name === 'Lavi Hair Serum') {
-  return <section key={product.id} id='hair_serum' className="card-container hair_serum_img">
+  return <section key={product.id} id='hair_serum' className="card-container">
   <h2 className="card-title drop-shadow4 hair_serum_img">{product.name}</h2>
   <img src= {product.image.url} alt="Image" 
   className="card-img drop-shadow4 hair_serum_img" 
