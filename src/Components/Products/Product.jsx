@@ -112,11 +112,11 @@ if(product.name == 'Advert'){
    </a> 
 }else if(product.name === 'Lavi Hair Serum') {
   return <section key={product.id} id='hair_serum' className="card-container">
-  <h2 className="card-title drop-shadow4 hair_serum_img">{product.name}</h2>
+  <h2 className="card-title drop-shadow4 ">{product.name}</h2>
   <img src= {product.image.url} alt="Image" 
-  className="card-img drop-shadow4 hair_serum_img" 
+  className="card-img drop-shadow4 " 
   width='250px' height='220px'/> 
-  <div className="tooltip"><FcInfo /> Learn More<span className="tooltiptext">Ingredients:
+  <div className="tooltip"><span id="tooltip-hover"><FcInfo /> Learn More<span className="tooltiptext">Ingredients:
   ORGANIC Olive Oil
   ORGANIC Cold Pressed Coconut Oil
   ORGANIC Pumpkin Seed Oil
@@ -134,7 +134,7 @@ if(product.name == 'Advert'){
   ORGANIC Peppermint Essential Oil
   ORGANIC Turmeric Root 
   ORGANIC Green Tea Extract
-  DISTILLED Water</span></div>
+  DISTILLED Water</span></span></div>
   <form className="card-text meal-selection ">
   
 <label title= {product.title + ' Only'}>
