@@ -98,10 +98,10 @@
  }
 
 .tooltiptext {
-  /* visibility: hidden; */
+  visibility: hidden;
   display: none;
-  visibility: visible;
-  width: 120px;
+  /* visibility: visible;  */
+  /* width: 120px; */
   background-color: #000;
   color: #fff;
   text-align: center;
@@ -117,7 +117,7 @@
 }
 
 #tooltip-hover:hover .tooltiptext {
-  width: 30vw;
+  width: 28vw;
   display: flex;
   visibility: visible;
   opacity: 1;

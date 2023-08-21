@@ -388,13 +388,17 @@ hr.left-border {
  }
 
  
-@media (width <= 550px) {
-  .tooltip:hover .tooltiptext {
-    width: 60vw;
-    visibility: visible;
-    opacity: 1;
-  }
-}
+ @media (width <= 550px) {
+
+  #tooltip-hover:hover .tooltiptext {
+   width: 95vw;
+   display: flex;
+   visibility: visible;
+   opacity: 1;
+ }
+ 
+ }
+ 
 @media (width <= 400px) {
   .login-modal, .register-modal {
     padding: 8%;
@@ -406,11 +410,6 @@ hr.left-border {
     object-fit: cover;
     padding: 3%;
 }
-.hair_serum {
-  object-fit: contain;
-  width: 100vw;
- }
-
 }
 
 
