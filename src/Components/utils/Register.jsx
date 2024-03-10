@@ -39,7 +39,6 @@ const handleSubmit = async (e) =>{
 try {
  let {data,responseStatus} = await FetchService.postData('auth/register',registrationData);
  if(responseStatus === 200){
-    console.log(data);
     await dispatch(addCustomer(data))
     toast.success(data.firstName + ' has registered successfully')
     setUserName(data);
@@ -88,11 +87,11 @@ try {
         </li>
         <li><label htmlFor="password">Password</label>
         <input onChange={handleInputChange } tpye="password" placeholder='Enter
-         Password here..' id='password' name='password' />
+         Password here..' id='password' name='password' required />
         </li>
         <li><label htmlFor="address">Address</label>
         <input onChange={handleInputChange } tpye="address" placeholder='123 Apple st..'
-         id='address' name='address' />
+         id='address' name='address' required />
         </li>        
         <li><label htmlFor="zipCode">Zipcode</label>
         <input onChange={handleInputChange } tpye="zipCode" placeholder='435xx..' id='zipCode' name='zipCode' />

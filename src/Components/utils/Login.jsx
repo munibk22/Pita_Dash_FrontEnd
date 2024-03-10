@@ -97,11 +97,11 @@ function toggleRegister(e) {
         <li><label htmlFor="userName">Username</label>
         <input onChange={handleInputChange }
          placeholder="your_Email@mail.com.."
-        type="text" id="userName" name="userName" />
+        type="text" id="userName" name="userName" required/>
         </li>
         <li><label htmlFor="password">Password</label>
         <input onChange={handleInputChange } tpye="password" placeholder='Enter
-         Password here..' id='password' name='password' />
+         Password here..' id='password' name='password' required />
         </li>
         <li><button type="submit" className='btn-blue'>Submit</button></li>
         <li><button type="button" className='btn-red' onClick={handleClose}>Close</button></li>
