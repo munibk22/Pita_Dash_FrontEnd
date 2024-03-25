@@ -33,7 +33,7 @@ const App = () => {
 
   const fetchProducts = async() =>{
 const {data} = await commerceService.products.list();
-// console.log(data);
+console.log("Fethcing Data...");
 setProducts(data);
   }
   useEffect(() =>{
@@ -46,8 +46,6 @@ setProducts(data);
     });
 
   },[]);
-
-  console.log(products);
 
   const handleRemoveItem = (item) => {
     setCartItems((prevItems) => prevItems.filter((i) => i.id !== item.id));
