@@ -6,7 +6,7 @@
   // this.uri = uri;
   // export const url = "http://localhost:8080/";
   // export const url = "https://pitadashbackend-production.up.railway.app/";
-  export const url = "http://3.21.164.197:8081/";
+  export const url = "https://3.21.164.197:8081/";
 
   export const FetchService = {
   // constructor(uri){
